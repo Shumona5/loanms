@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BankController;
+use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\FavouriteListController;
 use App\Http\Controllers\HomeController;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'home']);
 Route::get('/user',[UserController::class,'user']);
+Route::get("/user/create",[UserController::class,"create"]);
 Route::get('/bank',[BankController::class,'bank']);
 Route::get('/admins',[AdminController::class,'admin']);
 Route::get('/loans',[LoanController::class,'loan']);

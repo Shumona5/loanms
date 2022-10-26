@@ -10,4 +10,7 @@ class UserController extends Controller
     {
         return view('backend.pages.loan_seeker');
     }
+    public function create(){
+        return view('backend.pages.userform');
+    }
 }
