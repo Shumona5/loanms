@@ -8,9 +8,11 @@ class UserController extends Controller
 {
     public function user()
     {
-        return view('backend.pages.loan_seeker');
+        return view('backend.pages.users.loan_seeker');
     }
-    public function create(){
-        return view('backend.pages.userform');
+    
+    public function createform()
+    {
+        return view('backend.pages.users.create');
     }
 }

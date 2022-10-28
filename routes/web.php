@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class,'home']);
 Route::get('/user',[UserController::class,'user']);
-Route::get("/user/create",[UserController::class,"create"]);
+Route::get('users/create',[UserController::class,'createform']);
 Route::get('/bank',[BankController::class,'bank']);
 Route::get('/admins',[AdminController::class,'admin']);
 Route::get('/loans',[LoanController::class,'loan']);

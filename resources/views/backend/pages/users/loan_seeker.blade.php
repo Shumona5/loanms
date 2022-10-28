@@ -4,7 +4,7 @@
 
 
 <h1> Loan Seeker's List </h1>
-<a href= {{url('/user/create')}} class= "btn btn-primary"> Create User </a>
+<a href=""class="btn btn-primary"> Create New user </a>
 <table class="table">
     <thead>
       <tr>
