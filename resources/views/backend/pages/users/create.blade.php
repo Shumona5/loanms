@@ -5,29 +5,21 @@
 
 <form>
     <div class="form-group">
-        <label for="name">Enter Category Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter Category Name">
+        <label for="name"> Name: </label>
+        <input type="text" class="form-control" id="name" placeholder="Enter User Name">
     </div>
 
     <div class="form-group">
-        <label for="name">Description</label>
-        <textarea class="form-control" name="" id=""></textarea>
+        <label for=" email"> Email: </label>
+		<input type="email" class="form-control" id="email" placeholder="Enter User Email">
     </div>
 
     <div class="form-group">
-        <label for="">Enter Category Name</label>
-        <select name="" id="" class="form-control">
-            <option value="">Active</option>
-            <option value="">Inactive</option>
-        </select>
+        <label for="pass"> Password: </label>
+		<input type="password" class="form-control" id="pass"  placeholder=" password">
     </div>
 
-    <div class="form-group">
-        <label for="image">Upload Image</label>
-        <input type="file" class="form-control" id="image">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 
