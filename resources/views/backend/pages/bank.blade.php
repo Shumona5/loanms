@@ -5,6 +5,8 @@
 
 <h1>  Bank's List </h1>
 
+
+
 <table class="table">
     <thead>
       <tr>
@@ -17,30 +19,23 @@
       </tr>
     </thead>
     <tbody>
+
+
+      @foreach ( $bank_list as $bank )
+          
+      
       <tr>
         <th scope="row">1</th>
-        <td>Dhaka</td>
-        <td>House-1, Rd-13, Jashimuddin Ave, Dhaka 1230</td>
-        <td>email </td>
-        <td>017++++++++ </td>
+        <td>{{$bank->name}}</td>
+        <td>{{$bank->address}}</td>
+        <td>{{$bank->email}}</td>
+        <td>{{$bank->contact}}</td>
         <td> Active </td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>BRAC Bank Limited.</td>
-        <td>@fat</td>
-        <td>email</td>
-        <td>017++++++++</td>
-        <td>Active</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>City Bank Limited</td>
-        <td>address</td>
-        <td>email</td>
-        <td>013++++++++</td>
-        <td>Inactive</td>
-      </tr>
+      
+      @endforeach
+
+
     </tbody>
   </table>
 
