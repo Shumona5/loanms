@@ -43,6 +43,12 @@
                     Criteria
                 </a>
 
+
+                <a class="nav-link" href="{{url('/loancriteria')}}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Loan Criteria
+                </a>
+
                 <a class="nav-link" href="loantype">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Loan Type

@@ -5,7 +5,7 @@
 
 <h1>  Bank's List </h1>
 
-
+<a href="{{url('bank/create')}}" class="btn btn-primary"> Create New Bank Account </a>
 
 <table class="table">
     <thead>
@@ -20,20 +20,16 @@
     </thead>
     <tbody>
 
-
-      @foreach ( $bank_list as $bank )
-          
-      
-      <tr>
+       <tr>
         <th scope="row">1</th>
-        <td>{{$bank->name}}</td>
-        <td>{{$bank->address}}</td>
-        <td>{{$bank->email}}</td>
-        <td>{{$bank->contact}}</td>
-        <td> Active </td>
+        <td>tst</td>
+        <td>tst</td>
+        <td>tst</td>
+        <td>tst</td>
+        <td>tst</td>
       </tr>
       
-      @endforeach
+      
 
 
     </tbody>
