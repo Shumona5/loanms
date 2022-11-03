@@ -9,8 +9,14 @@ class BankController extends Controller
 {
     public function bank()
     {
+
+      // variable=Model name::all-method(); ....formula....
+     $bank_list=Bank::all();
+      // dd($bank_list);
+
+
     
-       return view('backend.pages.banks.bank');
+       return view('backend.pages.banks.bank',compact('bank_list'));
     }
 
     public function createform()

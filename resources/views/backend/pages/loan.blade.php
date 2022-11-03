@@ -4,7 +4,7 @@
 @section('Content')
 
 <h1>  Loan </h1>
-
+<a href="" class="btn btn-primary"> Create New Loan </a>
 <table class="table">
     <thead>
       <tr>

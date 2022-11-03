@@ -34,13 +34,7 @@
     </div>
 
     <div>
-        Status:
-        <br>
-		<label for="status 1"> Active </label>
-		<input type="radio"  id=" status" name=" status">
-		<br>
-		<label for="status 2"> Inactive </label>
-        <input type="radio" id=" status" name=" status">
+        <select name="" id=""> Status </select>
     </div>
     
 <button type="submit" class="btn btn-primary"> Submit </button>

@@ -38,10 +38,24 @@ Route::post('/bank/store',[BankController::class,'bankstore'])->name('bank.store
 
 
 Route::get('/admins',[AdminController::class,'admin']);
+
 Route::get('/loans',[LoanController::class,'loan']);
+
+
+
 Route::get('/loantype',[LoanTypeController::class,'list']);
+
 Route::get('/loanapply',[LoanApplyController::class,'list']);
+Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
+Route::post('/loanapply/store',[LoanApplyController::class,'loanstore'])->name('loan.store');
+
+
+
 Route::get('/criteria',[CriteriaController::class,'list']);
 Route::get('/loancriteria',[loanCriteriaController::class,'list']);
 Route::get('/report',[ReportController::class,'reports']);
+
+
 Route::get('/fav',[FavouriteListController::class,'list']);
+Route::get('/favs-create',[FavouriteListController::class,'formcreate'])->name('fav.create');
+Route::post('/fav.store',[FavouriteListController::class,'favStore'])->name('fav.store');

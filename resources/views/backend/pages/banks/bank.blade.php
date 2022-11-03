@@ -12,27 +12,31 @@
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
-        <th scope="col">Address </th>
-        <th scope="col">Email</th>
-        <th scope="col">Contact</th>
+        <th scope="col">Email </th>
+        <th scope="col">Logo</th>
         <th scope="col">Status</th>
+        <th scope="col">Address</th>
+        <th scope="col">Contact</th>
       </tr>
     </thead>
     <tbody>
 
-       <tr>
-        <th scope="row">1</th>
-        <td>tst</td>
-        <td>tst</td>
-        <td>tst</td>
-        <td>tst</td>
-        <td>tst</td>
-      </tr>
-      
-      
+@foreach ($bank_list as $data)
+    
+<tr>
+  <th scope="row">1</th>
+  <td>{{$data->name}}</td>
+  <td>{{$data->email}}</td>
+  <td>{{$data->logo}}</td>
+  <td>{{$data->status}}</td>
+  <td>{{$data->address}}</td>
+  <td>{{$data->contact}}</td>
+</tr>
+
+@endforeach
 
 
-    </tbody>
+</tbody>
   </table>
 
 

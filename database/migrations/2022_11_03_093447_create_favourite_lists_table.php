@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('favourite_list', function (Blueprint $table) {
+        Schema::create('favourite_lists', function (Blueprint $table) {
             $table->id();
             $table->string('loan_seekers_name',50);
             $table->string('loan_id',50);
             $table->timestamps();
         });
+
+        
     }
 
     /**
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('favourite_list');
+        Schema::dropIfExists('favourite_lists');
     }
 };
