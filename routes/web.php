@@ -41,8 +41,6 @@ Route::get('/admins',[AdminController::class,'admin']);
 
 Route::get('/loans',[LoanController::class,'loan']);
 
-
-
 Route::get('/loantype',[LoanTypeController::class,'list']);
 
 Route::get('/loanapply',[LoanApplyController::class,'list']);

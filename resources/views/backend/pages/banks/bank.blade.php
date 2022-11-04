@@ -17,6 +17,7 @@
         <th scope="col">Status</th>
         <th scope="col">Address</th>
         <th scope="col">Contact</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -31,6 +32,12 @@
   <td>{{$data->status}}</td>
   <td>{{$data->address}}</td>
   <td>{{$data->contact}}</td>
+<td>
+  <a href=""class="btn btn-success"> View </a>
+  <a href="" class="btn btn-danger"> Delete </a>
+  <a href="" class="btn btn-primary"> Upadte </a>
+</td>
+
 </tr>
 
 @endforeach

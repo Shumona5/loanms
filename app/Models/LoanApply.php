@@ -10,3 +10,4 @@ class LoanApply extends Model
     use HasFactory;
     protected $guarded = [];
 }
+

@@ -11,9 +11,11 @@ class LoanApplyController extends Controller
 
     {
 
-
+     $loan_apply=LoanApply::all();
+     
+    //  dd($loan_apply);
         
-        return view('backend.pages.loan_apply.loanapply');
+        return view('backend.pages.loan_apply.loanapply',compact('loan_apply'));
     }
 
     public function createform()
@@ -36,3 +38,4 @@ class LoanApplyController extends Controller
     }
 
 }
+

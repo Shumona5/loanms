@@ -33,8 +33,12 @@
         <input type="text" class="form-control" id="text"  name="address" > 
     </div>
 
-    <div>
-        <select name="" id=""> Status </select>
+    <div class="form-group">
+        <label for=""> Select Status </label>
+           <select name="status" id="" class="form-control"> 
+           <option value="active"> Active </option>
+           <option value="inactive"> Inactive </option>   
+           </select>
     </div>
     
 <button type="submit" class="btn btn-primary"> Submit </button>
