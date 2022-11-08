@@ -21,28 +21,15 @@
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Dhaka</td>
-        <td>House-1, Rd-13, Jashimuddin Ave, Dhaka 1230</td>
-        <td>email </td>
-        <td>017++++++++ </td>
+        <td>Car loan</td>
+        <td>Car loan for purchase of brand new or reconditioned car (for private use only) </td>
+        <td> 123 </td>
+        <td>1234</td>
+        <td> 100000 </td>
+        <td>1</td>
         <td> Active </td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>BRAC Bank Limited.</td>
-        <td>@fat</td>
-        <td>email</td>
-        <td>017++++++++</td>
-        <td>Active</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>City Bank Limited</td>
-        <td>address</td>
-        <td>email</td>
-        <td>013++++++++</td>
-        <td>Inactive</td>
-      </tr>
+      
     </tbody>
   </table>
 

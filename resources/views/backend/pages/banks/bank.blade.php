@@ -25,7 +25,7 @@
 @foreach ($bank_list as $data)
     
 <tr>
-  <th scope="row">1</th>
+  <th scope="row"> 1 </th>
   <td>{{$data->name}}</td>
   <td>{{$data->email}}</td>
   <td>{{$data->logo}}</td>
@@ -46,5 +46,6 @@
 </tbody>
   </table>
 
+ {{ $bank_list->links() }}
 
 @endsection

@@ -14,7 +14,7 @@
 
 <div>
     <label for="number"> Loan ID: </label>
-    <input type="number" class="form-control"  id="number"   name="loan_id"     placeholder="Loan_ID">
+    <input type="number" class="form-control"  id="number"   name="loan_id"     placeholder="Loan_ID" >
 </div>
     
 <button type="submit" class="btn btn-primary"> Submit </button>

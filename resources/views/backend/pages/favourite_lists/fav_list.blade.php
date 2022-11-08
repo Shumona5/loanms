@@ -17,6 +17,7 @@
     </tr>
     </thead>
     <tbody>
+      {{-- @dd($fav); --}}
 
         @foreach ($fav as $favlist )
         <tr>
@@ -28,5 +29,8 @@
         @endforeach
     </tbody>
   </table>
+
+{{$fav->links()}}
+
 
   @endsection 

@@ -28,8 +28,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'home']);
 Route::get('/user',[UserController::class,'user']);
 
-Route::get('users/create',[UserController::class,'createform']);
+Route::get('/users/create',[UserController::class,'createform']);
 Route::post('/user/store',[UserController::class,'userStore'])->name('user.store');
+
 
 
 Route::get('/bank',[BankController::class,'bank']);
@@ -42,6 +43,11 @@ Route::get('/admins',[AdminController::class,'admin']);
 Route::get('/loans',[LoanController::class,'loan']);
 
 Route::get('/loantype',[LoanTypeController::class,'list']);
+Route::get('/loantype/create',[LoanTypeController::class,'createform']);
+
+
+
+
 
 Route::get('/loanapply',[LoanApplyController::class,'list']);
 Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
