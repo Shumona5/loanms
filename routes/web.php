@@ -41,17 +41,20 @@ Route::post('/bank/store',[BankController::class,'bankstore'])->name('bank.store
 Route::get('/admins',[AdminController::class,'admin']);
 
 Route::get('/loans',[LoanController::class,'loan']);
+Route::get('/loan/create',[LoanController::class,'createform']);
+Route::post('loan/store',[LoanController::class,'loanStore'])->name('loan.store');
+
 
 Route::get('/loantype',[LoanTypeController::class,'list']);
 Route::get('/loantype/create',[LoanTypeController::class,'createform']);
-
+Route::post('/loantype/store',[LoanTypeController::class,'loantypelist'])->name('loantype.store');
 
 
 
 
 Route::get('/loanapply',[LoanApplyController::class,'list']);
 Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
-Route::post('/loanapply/store',[LoanApplyController::class,'loanstore'])->name('loan.store');
+Route::post('/loanapply/store',[LoanApplyController::class,'loanstore'])->name('loan.apply.store');
 
 
 

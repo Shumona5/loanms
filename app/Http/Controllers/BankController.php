@@ -11,9 +11,7 @@ class BankController extends Controller
     public function bank()
     {
 
-
-
-      // variable=Model name::all-method(); ....formula....
+     // variable=Model name::all-method(); ....formula....
    //  $bank_list=Bank::all();
     $bank_list=Bank::paginate(5);
       // dd($bank_list);

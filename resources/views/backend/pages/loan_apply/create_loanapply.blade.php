@@ -4,7 +4,7 @@
 
 <h1> Loan Appliers List </h1>
 
-<form action="{{route('loan.store')}}" method="POST">
+<form action="{{route('loan.apply.store')}}" method="POST">
 @csrf
 
 <div>

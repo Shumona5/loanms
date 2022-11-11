@@ -13,22 +13,27 @@ class UserController extends Controller
      }
     
 
-public function userStore(Request $request)
-{
-//    dd($request->all());
-  User::create([
-   // column name= input field name
-   'name'=>$request->user_name,
-   'email'=>$request->user_mail,
-   'password'=>'12345'
- ]);
-
- return redirect()-> back();
-   
-}
-
- public function createform()
+    public function createform()
     {
         return view('backend.pages.users.create');
+    }
+
+
+    public function userstore(Request $request)
+    {
+        // dd($request ->all());
+        
+
+        User::create([
+            'name'=>$request->user_name,
+            'email'=>$request->user_mail,
+            'password'=>$request->password,
+            'image'=>$request->image,
+            'status'=>$request->status,
+            'contact'=>$request->contact,
+            'address'=>$request->address
+        ]);
+
+        return redirect()->back();
     }
 }

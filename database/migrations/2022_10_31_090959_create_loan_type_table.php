@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('loan_type', function (Blueprint $table) {
+        Schema::create('loan_types', function (Blueprint $table) {
             $table->id();
             $table->string('name',50);
             $table->text('description',100);
             $table->string('image')->nullable();
-            $table->string('status',3);
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

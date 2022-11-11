@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('loan', function (Blueprint $table) {
+        Schema::create('loans', function (Blueprint $table) {
             $table->id();
-            $table->string('title',30);
-            $table->string('status',3);
-            $table->string('type_id',30);
-            $table->text('details',100);
-            $table->string('bank_id',50);
-            $table->string('loan_amount',50);
-            $table->string('number_of_years',40);
+            $table->string('title');
+            $table->string('status')->default('active');
+            $table->integer('type_id');
+            $table->text('details')->nullable();
+            $table->integer('bank_id');
+            $table->double('loan_amount',10,2);
+            $table->integer('number_of_months');
             $table->timestamps();
         });
     }

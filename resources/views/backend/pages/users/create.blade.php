@@ -19,13 +19,18 @@
  </div>
 
  <div>
+   <label for="text"> Password:  </label>
+   <input type="password" class="form-control" id="text" name="password" > 
+</div>
+
+ <div>
    <label for="text"> Address:  </label>
    <input type="text" class="form-control" id="text" name="address" > 
 </div>
     
  <div>
     <label for="text"> Contact:  </label>
-    <input type="text" class="form-control" id="text"  name="number" placeholder="Enter Your Phone Number"> 
+    <input type="text" class="form-control" id="text"  name="contact" placeholder="Enter Your Phone Number"> 
  </div>
 
  <div>
