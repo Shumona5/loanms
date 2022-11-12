@@ -35,7 +35,7 @@ class LoanController extends Controller
         'title'=>$request->loan_title,
         'status'=>$request->status,
         'type_id'=>$request->loan_type_id,
-        'bank_id'=>$request->bank_id,
+        'bank_id'=>1,
         'loan_amount'=>$request->loan_amount,
         'number_of_months'=>$request->number_of_months
 

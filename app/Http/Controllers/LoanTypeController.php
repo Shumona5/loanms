@@ -4,13 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\LoanType;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Unique;
 use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 class LoanTypeController extends Controller
 {
     public function list()
     {
-        return view('backend.pages.loan_types.loan_type');
+        
+        // $loantypes_list=LoanType::all();
+        $loantypes_list=LoanType::paginate(5);
+        // dd($loantypes_list);
+    
+        return view('backend.pages.loan_types.loan_type',compact('loantypes_list'));
     }
 
 public Function createform()
@@ -21,10 +27,26 @@ public Function createform()
 public function loantypelist(Request $request)
 {
     //dd($request-> all());
+    $request->validate([
+      'loan_name'=>'required|unique:loan_types,name',
+      'picture'=>'required'
+    ]);
+    
+   $fileName=null;
+   if($request->hasFile('picture'))
+   {
+    //    generate name
+       $fileName=date('ymdhmi').'.'.$request->file('picture')->getClientOriginalExtension();
+       $request->file('picture')->storeAs('/uploads',$fileName);
+
+   }
+
+
     LoanType::create([
         'name'=>$request->loan_name,
         'description'=>$request->description,
-        'image'=>$request->status
+        'image'=>$fileName,
+        'status'=>$request->status
     ]);
 
     return redirect()-> back();

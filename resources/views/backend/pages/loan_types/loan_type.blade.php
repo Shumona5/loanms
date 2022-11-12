@@ -19,33 +19,24 @@
           </tr>
         </thead>
         <tbody>
+          @foreach ($loantypes_list as $key=>$data )
           <tr>
-            <th scope="row">1</th>
-            <td> Car </td>
-            <td> # </td>
-            <td>@mdo</td>
+            <th scope="row"> {{$data->id}} </th>
+            <td>{{$data->name}} </td>
+            <td> <img width="100px" src="{{url('/uploads/'. $data->image)}}" alt="image"></td>
+            <td>{{$data->status}}</td>
             <td>
               <a href=""class="btn btn-success"> View </a>
               <a href="" class="btn btn-danger"> Delete </a>
               <a href="" class="btn btn-primary"> Upadte </a>
             </td>
-          </tr>
-          <tr>
-          
-            
-          </tr>
+          </tr> 
+          @endforeach
+        </tr>
         </tbody>
       </table>
       
 </table>
 
-
-
-
-
-
-
-
-
-
+{{$loantypes_list->links()}}
 @endsection

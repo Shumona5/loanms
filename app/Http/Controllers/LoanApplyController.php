@@ -28,8 +28,8 @@ class LoanApplyController extends Controller
         // dd($request->all());
 
         LoanApply::create([
-        'user_id'=>$request->user_id,
-        'loan_id'=>$request->loan_id,
+        'user_id'=>1,
+        'loan_id'=>1,
         'bank_id'=>$request->bank_id,
         'status'=>$request->status,
         'duration'=>$request->duration

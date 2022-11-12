@@ -19,24 +19,27 @@
       </tr>
     </thead>
     <tbody>
+      @foreach ( $user_list as $data )
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>m@gmail.com</td>
-        <td>Dhaka</td>
-        <td>01234567890</td>
-        <td> </td>
-        <td>Active </td>
+        <td> {{$data->name}}</td>
+        <td>{{$data->email}}</td>
+        <td>{{$data->address}}</td>
+        <td>{{$data->contact}}</td>
+        <td> <img width="100px" src="{{url('/uploads/'.$data->image)}}" alt="image"></td>
+        <td>{{$data->status}} </td>
         <td>
           <a href=""class="btn btn-success"> View </a>
           <a href="" class="btn btn-danger"> Delete </a>
           <a href="" class="btn btn-primary"> Upadte </a>
         </td>
-      </tr>
+      </tr>  
+      @endforeach
+      
       
     </tbody>
   </table>
-
+{{$user_list->links()}}
 
     
 @endsection

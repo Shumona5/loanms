@@ -22,10 +22,10 @@
     </thead>
     <tbody>
 
-@foreach ($bank_list as $data)
+@foreach ($bank_list as $key=>$data)
     
 <tr>
-  <th scope="row"> 1 </th>
+  <th scope="row"> {{$key+1}} </th>
   <td>{{$data->name}}</td>
   <td>{{$data->email}}</td>
   <td>{{$data->logo}}</td>

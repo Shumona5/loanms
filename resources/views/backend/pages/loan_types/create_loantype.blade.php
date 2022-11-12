@@ -2,7 +2,7 @@
 
 @section('Content')
 
-<form action="{{route('loantype.store')}}" method="POST">
+<form action="{{route('loantype.store')}}" method="POST" enctype="multipart/form-data">
 @csrf
     <div>
         <label for="loan_name"> Loan Name: </label>
@@ -17,7 +17,7 @@
         
        <div>
             <label for="image"> Image: </label>
-            <input type="file"  class="form-control" id="image" name="image" >
+            <input type="file"  class="form-control" id="image" name="picture" >
          </div>
          
         

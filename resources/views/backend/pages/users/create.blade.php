@@ -4,8 +4,20 @@
 
 @section('Content')
 
-<form action="{{route('user.store')}}" method="POST"> 
-@csrf
+<form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data"> 
+
+   @if($errors->any())
+    @foreach($errors->all() as $message)
+        <p class="alert alert-danger">{{$message}}</p>
+    @endforeach
+    @endif
+
+    
+    @if(session()->has('message'))
+       <p class="alert alert-success">{{session()->get('message')}}</p>
+    @endif
+   
+    @csrf
 
 <div>
 <label for="name"> Name:  </label>
