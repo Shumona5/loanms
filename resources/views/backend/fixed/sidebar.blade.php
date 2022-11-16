@@ -3,64 +3,64 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 
-                <a class="nav-link" href="{{url('/')}}">
+                <a class="nav-link" href="{{route('dashboard')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
 
 
 
-                <a class="nav-link" href="{{url('/admins')}}">
+                <a class="nav-link" href="{{route('admin')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Admin
                 </a>
 
 
-                <a class="nav-link" href="{{url('/bank')}}">
+                <a class="nav-link" href="{{route ('bank')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Bank
                 </a>
 
 
-                <a class="nav-link" href="{{url('/user')}}">
+                <a class="nav-link" href="{{route('user')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Loan Seeker
                 </a>
 
-                <a class="nav-link" href="{{url('/loans')}}">
+                <a class="nav-link" href="{{route('loan')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Loan
                 </a>
 
-                <a class="nav-link" href="{{url('/loanapply')}}">
+                <a class="nav-link" href="{{route('loanapply')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Loan Apply
                 </a>
 
 
-                <a class="nav-link" href="{{url('/criteria')}}">
+                <a class="nav-link" href="{{route('criteria')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Criteria
                 </a>
 
 
-                <a class="nav-link" href="{{url('/loancriteria')}}">
+                <a class="nav-link" href="{{route('loancriteria')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Loan Criteria
                 </a>
 
-                <a class="nav-link" href="{{url('/loantype')}}">
+                <a class="nav-link" href="{{route('loantype')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Loan Type
                 </a>
 
 
-                <a class="nav-link" href="{{url('/report')}}">
+                <a class="nav-link" href="{{route('report')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Report
                 </a>
 
-                <a class="nav-link" href="{{url('/fav')}}">
+                <a class="nav-link" href="{{route('fav')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Favourite List
                 </a>
