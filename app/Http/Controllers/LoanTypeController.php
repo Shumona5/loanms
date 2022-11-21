@@ -29,7 +29,7 @@ public function loantypelist(Request $request)
     //dd($request-> all());
     $request->validate([
       'loan_name'=>'required|unique:loan_types,name',
-      'picture'=>'required'
+     'picture'=>'required'
     ]);
     
    $fileName=null;
@@ -51,5 +51,9 @@ public function loantypelist(Request $request)
 
     return redirect()-> back();
 }
+
+public function deleteloantype()
+{
     
+}
 }

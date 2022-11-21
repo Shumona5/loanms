@@ -3,7 +3,7 @@
 @section('Content')
 
 
-<form action="{{route('bank.store')}}" method="POST"> 
+<form action="{{route('bank.store')}}" method="POST" enctype="multipart/form-data"> 
 
 
     @if($errors->any())
@@ -12,6 +12,11 @@
     @endforeach
     @endif
     
+  @if (session()->has ('message'))
+  <p class="alert alert-success"> {{session()->get('message')}} </p>
+      
+   @endif
+
     @csrf
     
     <div>

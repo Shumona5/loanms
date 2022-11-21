@@ -5,7 +5,7 @@
     
 <h1> Loan Types </h1>
 
-<a href="{{url('/loantype/create')}}" class="btn btn-primary"> Create New Loan Types </a>
+<a href="{{route('loan.type.create')}}" class="btn btn-primary"> Create New Loan Types </a>
 
 <table>
     <table class="table">
@@ -27,8 +27,8 @@
             <td>{{$data->status}}</td>
             <td>
               <a href=""class="btn btn-success"> View </a>
-              <a href="" class="btn btn-danger"> Delete </a>
-              <a href="" class="btn btn-primary"> Upadte </a>
+              <a href="{{route('admin.loantype.delete')}}" class="btn btn-danger"> Delete </a>
+              <a href="" class="btn btn-primary"> Edit </a>
             </td>
           </tr> 
           @endforeach

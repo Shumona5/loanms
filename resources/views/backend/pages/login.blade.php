@@ -42,7 +42,7 @@
     <p class="alert alert-danger">{{session()->get('message')}}</p>
 @endif
 
-    <div class="form-group mb-3">
+<div class="form-group mb-3">
 <label class="label" for="name"> Email</label>
 <input type="text" class="form-control"  name="email"  placeholder=" Enter Email" required>
 </div>

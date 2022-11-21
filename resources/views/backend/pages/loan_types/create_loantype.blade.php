@@ -3,6 +3,9 @@
 @section('Content')
 
 <form action="{{route('loantype.store')}}" method="POST" enctype="multipart/form-data">
+
+    
+    
 @csrf
     <div>
         <label for="loan_name"> Loan Name: </label>

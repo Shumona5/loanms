@@ -46,9 +46,13 @@ Route::post('/user/store',[UserController::class,'userStore'])->name('user.store
 
 
 Route::get('/bank',[BankController::class,'bank'])->name('bank');
-Route::get('/bank/create',[BankController::class,'createform']);
+Route::get('/bank/create',[BankController::class,'createform'])->name('bank.create');
 Route::post('/bank/store',[BankController::class,'bankstore'])->name('bank.store');
 
+Route::get('/bank/delete/{bank_id}',[BankController::class,'deleteBank'])->name('admin.bank.delete');
+Route::get('/bank/view/{bank_id}',[BankController::class,'viewBank'])->name('admin.bank.view');
+Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('admin.bank.edit');
+Route::post('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
 
 Route::get('/admins',[AdminController::class,'admin'])->name('admin');
 
@@ -56,24 +60,18 @@ Route::get('/loans',[LoanController::class,'loan'])->name('loan');
 Route::get('/loan/create',[LoanController::class,'createform']);
 Route::post('loan/store',[LoanController::class,'loanStore'])->name('loan.store');
 
-
 Route::get('/loantype',[LoanTypeController::class,'list'])->name('loantype');
-Route::get('/loantype/create',[LoanTypeController::class,'createform']);
+Route::get('/loantype/create',[LoanTypeController::class,'createform'])->name('loan.type.create');
 Route::post('/loantype/store',[LoanTypeController::class,'loantypelist'])->name('loantype.store');
-
-
-
+Route::get('/loantype/delete',[LoanTypeController::class,'deleteloantype'])->name('admin.loantype.delete');
 
 Route::get('/loanapply',[LoanApplyController::class,'list'])->name('loanapply');
 Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
 Route::post('/loanapply/store',[LoanApplyController::class,'loanstore'])->name('loan.apply.store');
 
-
-
 Route::get('/criteria',[CriteriaController::class,'list'])->name('criteria');
 Route::get('/loancriteria',[loanCriteriaController::class,'list'])->name('loancriteria');
 Route::get('/report',[ReportController::class,'reports'])->name('report');
-
 
 Route::get('/fav',[FavouriteListController::class,'list'])->name('fav');
 Route::get('/favs-create',[FavouriteListController::class,'formcreate'])->name('fav.create');

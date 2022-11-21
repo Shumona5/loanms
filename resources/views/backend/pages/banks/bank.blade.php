@@ -5,7 +5,16 @@
 
 <h1>  Bank's List </h1>
 
-<a href="{{url('bank/create')}}" class="btn btn-primary"> Create New Bank Account </a>
+@if(session()->has('message'))
+<p class="alert alert-success">{{session()->get('message')}}</p>
+ @endif
+
+ @if (session()->has('error'))
+<p class="alert alert-danger">{{session()->get('error')}}</p>
+    @endif
+
+
+<a href="{{route('bank.create')}}" class="btn btn-primary"> Create New Bank Account </a>
 
 <table class="table">
     <thead>
@@ -28,14 +37,14 @@
   <th scope="row"> {{$key+1}} </th>
   <td>{{$data->name}}</td>
   <td>{{$data->email}}</td>
-  <td>{{$data->logo}}</td>
+  <td><img src="" alt="Italian Trulli"></td>
   <td>{{$data->status}}</td>
   <td>{{$data->address}}</td>
   <td>{{$data->contact}}</td>
 <td>
-  <a href=""class="btn btn-success"> View </a>
-  <a href="" class="btn btn-danger"> Delete </a>
-  <a href="" class="btn btn-primary"> Upadte </a>
+  <a href="{{route('admin.bank.view',$data->id)}}"class="btn btn-success"> View </a>
+  <a href="{{route('admin.bank.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
+  <a href="{{route('admin.bank.edit',$data->id)}}" class="btn btn-primary"> Edit </a>
 </td>
 
 </tr>
