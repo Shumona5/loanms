@@ -48,7 +48,8 @@ public function bankstore(Request $request)
 
    ]);
 
-   return redirect()->back()->with('message','Bank Created Successfully');
+   notify()->success('Bank Created Successfully'); 
+   return redirect()->back();
 
 }
 
@@ -98,3 +99,5 @@ public function update(Request $request,$bank_id)
       return redirect()->route('bank')->with('message','Update Success');
 }
 }
+
+

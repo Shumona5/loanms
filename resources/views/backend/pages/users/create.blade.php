@@ -1,7 +1,4 @@
 @extends('backend.master')
-
-
-
 @section('Content')
 
 <form action="{{route('user.store')}}" method="POST" enctype="multipart/form-data"> 

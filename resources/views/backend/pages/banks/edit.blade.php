@@ -2,7 +2,7 @@
 @section('Content')
 
 <form action="{{route('admin.bank.update',$bank->id)}}" method="POST" enctype="multipart/form-data"> 
-
+@method('put')
  @csrf
     
     <div>

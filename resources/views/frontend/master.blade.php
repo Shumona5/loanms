@@ -22,6 +22,9 @@
             <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/slick.css">
             <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/nice-select.css">
             <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/style.css">
+
+            @notifyCss
+            <style type="text/css"> .notify{ z-index: 1000000; margin-top: 5%; } </style>
    </head>
 
    <body>
@@ -41,7 +44,7 @@
 
 @include('frontend.fixed.header')
 
-
+@include('notify::components.notify')   
 
     <main>
 
@@ -96,5 +99,11 @@
         <script src="https://technext.github.io/jobfinderportal/assets/js/plugins.js"></script>
         <script src="https://technext.github.io/jobfinderportal/assets/js/main.js"></script>
         
+        @notifyJs
+        
+        
+
+
+
     </body>
 </html>

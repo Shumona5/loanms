@@ -28,6 +28,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[WebHomeController::class,'home']);
+Route::post('register',[WebHomeController::class,'registration'])->name('user.registration');
+
+
+
+
+
 
 //   ...................Backend Route.............
 
@@ -43,7 +49,7 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard');
 Route::get('/user',[UserController::class,'user'])->name('user');
 Route::get('/users/create',[UserController::class,'createform']);
 Route::post('/user/store',[UserController::class,'userStore'])->name('user.store');
-
+Route::get('/user/view/{user_id}',[UserController::class,'viewUser'])->name('user.view');
 
 Route::get('/bank',[BankController::class,'bank'])->name('bank');
 Route::get('/bank/create',[BankController::class,'createform'])->name('bank.create');
@@ -52,7 +58,7 @@ Route::post('/bank/store',[BankController::class,'bankstore'])->name('bank.store
 Route::get('/bank/delete/{bank_id}',[BankController::class,'deleteBank'])->name('admin.bank.delete');
 Route::get('/bank/view/{bank_id}',[BankController::class,'viewBank'])->name('admin.bank.view');
 Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('admin.bank.edit');
-Route::post('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
+Route::put('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
 
 Route::get('/admins',[AdminController::class,'admin'])->name('admin');
 

@@ -33,8 +33,8 @@
                             </div>          
                             <!-- Header-btn -->
                             <div class="header-btn d-none f-right d-lg-block">
-                                <a href="#" class="btn head-btn1">Register</a>
-                                <a href="#" class="btn head-btn2">Login</a>
+                                <a href="#" class="btn head-btn1"data-toggle="modal" data-target="#register">Register</a>
+                                <a href="#" class="btn head-btn2" data-toggle="modal" data-target="#login">Login</a>
                             </div>
                         </div>
                     </div>

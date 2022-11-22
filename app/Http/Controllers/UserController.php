@@ -54,7 +54,7 @@ public function user()
         if($request->hasFile('image'))
         {
          //    generate name
-            $fileName=date('ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
+            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->storeAs('/uploads',$fileName);
      
         }
@@ -66,7 +66,8 @@ public function user()
             'image'=>$fileName,
             'status'=>$request->status,
             'contact'=>$request->contact,
-            'address'=>$request->address
+            'address'=>$request->address,
+            
         ]);
 
         return redirect()->back();
@@ -76,5 +77,10 @@ public function user()
     {
         Auth::logout();
         return redirect()->back()->with('message','logout Successful');
+    }
+
+    public function viewUser()
+    {
+        return view('backend.pages.users.view');
     }
 }

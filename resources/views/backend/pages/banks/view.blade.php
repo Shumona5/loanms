@@ -1,5 +1,15 @@
 @extends('backend.master')
 @section('Content')
+<p>
+    <label for="bank name"> Bank Name:  {{$bank->name}} </label>
 
-<h1> Bank</h1>
+</p>
+<p>
+    <label for="bank email"> Bank Email:  {{$bank->email}} </label>
+
+</p>
+
+
+
+
 @endsection
