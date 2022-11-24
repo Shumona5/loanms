@@ -14,6 +14,7 @@ use App\Http\Controllers\LoanTypeController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WebHomeController;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,10 +27,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/',[WebHomeController::class,'home']);
+//........................Frontend Route ......................
+Route::get('/',[WebHomeController::class,'home'])->name('user.home');
 Route::post('register',[WebHomeController::class,'registration'])->name('user.registration');
+Route::post('login',[WebHomeController::class,'login'])->name('user.login');
 
+Route::group(["middleware"=>'auth'],function(){
+    Route::get('logout',[WebHomeController::class,'logout'])->name('user.logout');
+
+});
 
 
 
@@ -41,6 +47,7 @@ Route::get('/login',[UserController::class,'login'])->name('login.form');
 Route::post('/login/store',[UserController::class,'store'])->name('login.store');
 
 Route::group(["middleware"=>'auth','prefix'=>'admin'],function(){
+    Route::group(["middleware"=>"checkAdmin"],function(){
 
 Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
@@ -54,7 +61,6 @@ Route::get('/user/view/{user_id}',[UserController::class,'viewUser'])->name('use
 Route::get('/bank',[BankController::class,'bank'])->name('bank');
 Route::get('/bank/create',[BankController::class,'createform'])->name('bank.create');
 Route::post('/bank/store',[BankController::class,'bankstore'])->name('bank.store');
-
 Route::get('/bank/delete/{bank_id}',[BankController::class,'deleteBank'])->name('admin.bank.delete');
 Route::get('/bank/view/{bank_id}',[BankController::class,'viewBank'])->name('admin.bank.view');
 Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('admin.bank.edit');
@@ -83,4 +89,5 @@ Route::get('/fav',[FavouriteListController::class,'list'])->name('fav');
 Route::get('/favs-create',[FavouriteListController::class,'formcreate'])->name('fav.create');
 Route::post('/fav.store',[FavouriteListController::class,'favStore'])->name('fav.store');
 
+});
 });

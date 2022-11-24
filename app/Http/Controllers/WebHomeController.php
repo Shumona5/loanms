@@ -32,4 +32,27 @@ class WebHomeController extends Controller
           notify()->success('User Registration Successfull.');
         return redirect()->back();
     }
-}             
+
+    public function login(Request $request)
+    {
+        // dd($request->all());
+        
+           $credential=$request->except('_token');
+             if(auth()->attempt($credential))
+             {
+
+                notify()->success('Login Success');
+                  return redirect()->back();
+             }
+
+             notify()->error('Invalid Credentials.');
+             return redirect()->back();
+    }       
+    
+    public function logout()
+    {
+        auth()->logout();
+        notify()->success('logout success');
+        return redirect()->back();
+    }
+  }

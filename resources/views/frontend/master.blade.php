@@ -10,18 +10,18 @@
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
 		<!-- CSS here -->
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/flaticon.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/price_rangs.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/slicknav.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/animate.min.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/magnific-popup.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/fontawesome-all.min.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/themify-icons.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/slick.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/nice-select.css">
-            <link rel="stylesheet" href="https://technext.github.io/jobfinderportal/assets/css/style.css">
+            <link rel="stylesheet" href="{{url('/frontend/css/bootstrap.min.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/bootstrap.min2.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/flaticon.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/ranges.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/slicknav.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/animate.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/poopup.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/fontawesome_min.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/icons.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/slick.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/select.css')}}">
+            <link rel="stylesheet" href="{{url('/frontend/css/style.css')}}">
 
             @notifyCss
             <style type="text/css"> .notify{ z-index: 1000000; margin-top: 5%; } </style>
@@ -29,7 +29,7 @@
 
    <body>
     <!-- Preloader Start -->
-    {{-- <div id="preloader-active">
+    {{-- <div id="preloader-active">-
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>

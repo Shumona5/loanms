@@ -79,8 +79,8 @@ public function user()
         return redirect()->back()->with('message','logout Successful');
     }
 
-    public function viewUser()
+    public function viewUser(int $user_id)
     {
-        return view('backend.pages.users.view');
+        return view('backend.pages.users.viewuser');
     }
 }

@@ -362,14 +362,15 @@
           </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form action="{{route('user.login')}}" method="POST">
+                @csrf
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email"    placeholder="Enter email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control" id="exampleInputPassword1"   name="password"   placeholder="Password">
                 </div>
             <button type="submit" class="btn btn-primary">Submit</button>
               </form>
@@ -414,10 +415,11 @@
         </div>
          <div class="modal-footer">
           
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="submit" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
 
 @endsection
+

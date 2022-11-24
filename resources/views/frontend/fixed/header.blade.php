@@ -32,10 +32,25 @@
                                 </nav>
                             </div>          
                             <!-- Header-btn -->
+                            @guest
                             <div class="header-btn d-none f-right d-lg-block">
                                 <a href="#" class="btn head-btn1"data-toggle="modal" data-target="#register">Register</a>
                                 <a href="#" class="btn head-btn2" data-toggle="modal" data-target="#login">Login</a>
                             </div>
+                            @endguest
+                            
+                            
+                            @auth
+                                
+                           
+                           <div class="header-btn d-none f-right d-lg-block">
+                                <a href="#" class="btn head-btn1"> {{auth()->user()->name}}</a>
+                                <a href="{{route('user.logout')}}" class="btn head-btn2" > Logout</a>
+                            </div>
+                            @endauth
+                                
+                            
+                            
                         </div>
                     </div>
                     <!-- Mobile Menu -->
