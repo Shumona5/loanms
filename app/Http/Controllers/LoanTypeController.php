@@ -26,12 +26,12 @@ public Function createform()
 
 public function loantypelist(Request $request)
 {
-    //dd($request-> all());
+    // dd($request-> all());
     $request->validate([
       'loan_name'=>'required|unique:loan_types,name',
      'picture'=>'required'
     ]);
-    
+    // dd($request-> all());
    $fileName=null;
    if($request->hasFile('picture'))
    {

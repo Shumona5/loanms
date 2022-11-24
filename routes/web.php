@@ -69,7 +69,7 @@ Route::put('/bank/update/{bank_id}',[BankController::class,'update'])->name('adm
 Route::get('/admins',[AdminController::class,'admin'])->name('admin');
 
 Route::get('/loans',[LoanController::class,'loan'])->name('loan');
-Route::get('/loan/create',[LoanController::class,'createform']);
+Route::get('/loan/create',[LoanController::class,'createform'])->name('loan.create');
 Route::post('loan/store',[LoanController::class,'loanStore'])->name('loan.store');
 
 Route::get('/loantype',[LoanTypeController::class,'list'])->name('loantype');

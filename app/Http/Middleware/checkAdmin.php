@@ -20,7 +20,7 @@ class checkAdmin
             
             return $next($request);
         }
-        
+        notify()->warning('You are not Admin ');
         return redirect()->route('user.home');
     }
 }

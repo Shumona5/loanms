@@ -4,19 +4,19 @@
 @section('Content')
 
 <h1>  Loan </h1>
-<a href="{{url('/loan/create')}}" class="btn btn-primary"> Create New Loan </a>
+<a href="{{route('loan.create')}}" class="btn btn-primary"> Create New Loan </a>
 <table class="table">
     <thead>
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Title</th>
         <th scope="col">Details </th>
-        <th scope="col">Loan Type Name</th>
-        <th scope="col">Bank_ID</th>
-        <th scope="col">Loan_Amount</th>
+        <th scope="col">Loan Type ID </th>
+        <th scope="col">Bank ID</th>
+        <th scope="col">Loan Amount</th>
         <th scope="col">Number Of Month(s)</th>
-        <th scope="col">Status</th>
-        <th scope="col">Action</th>
+        <th scope="col"> Status </th>
+        <th scope="col"> Action </th>
       </tr>
     </thead>
     <tbody>

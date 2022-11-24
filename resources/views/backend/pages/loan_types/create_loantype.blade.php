@@ -4,11 +4,17 @@
 
 <form action="{{route('loantype.store')}}" method="POST" enctype="multipart/form-data">
 
-    
-    
 @csrf
+
+@if($errors->any())
+@foreach ($errors->all() as $error)
+<p class="alert alert-danger">{{ $error }}</p>
+@endforeach
+@endif
+    
+
     <div>
-        <label for="loan_name"> Loan Name: </label>
+        <label for="loan_name"> Loan Type Name: </label>
         <input type="text" class="form-control" id="loan_name"  name="loan_name" placeholder="Enter Loan Title"> 
         
      </div>

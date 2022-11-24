@@ -10,10 +10,7 @@
     
     </div>
     
-   <div>
-        <label for="bank_id"> Bank_ID: </label>
-        <input type="number"  class="form-control" id="bank_id" name="bank_id" >
-     </div>
+   
 
      <div>
         <label for="details"> Details: </label>

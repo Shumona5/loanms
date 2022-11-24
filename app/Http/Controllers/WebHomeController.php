@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Loan;
 use App\Models\LoanType;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,8 +13,11 @@ class WebHomeController extends Controller
     {
 
         $data=LoanType::all();
-        // dd($data);
-        return view('frontend.pages.home',compact('data'));
+        $loans=Loan::all(); 
+        
+        // dd($loans);
+        return view('frontend.pages.home',compact('data','loans'));
+
     }
 
 
