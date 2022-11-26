@@ -44,6 +44,27 @@ class LoanController extends Controller
       return redirect()->back();
     }
 
+    public function viewloan(int $loan_id)
+    {
+      // dd($loan_id);
+      $loan=loan::find($loan_id);
+      return view('backend.pages.loans.view_loan',compact('loan'));
+    }
     
-    
+    public function deleteloan(int $loan_id)
+    {
+      
+        //  dd($loan_id);
+        $details=loan::find('$loan_id');
+        if($details)
+        {
+          $details->delete;
+          notify()->success('Loan deleted Successfully.');
+          return redirect()->back();
+        }
+        else{
+          notify()->Error('Loan not Found');
+          return redirect();
+        }
+    }
 }

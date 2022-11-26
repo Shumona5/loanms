@@ -10,9 +10,7 @@
     
     </div>
     
-   
-
-     <div>
+    <div>
         <label for="details"> Details: </label>
         <input type="text"  class="form-control" id="details" name="details" >
      </div>

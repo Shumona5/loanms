@@ -71,6 +71,8 @@ Route::get('/admins',[AdminController::class,'admin'])->name('admin');
 Route::get('/loans',[LoanController::class,'loan'])->name('loan');
 Route::get('/loan/create',[LoanController::class,'createform'])->name('loan.create');
 Route::post('loan/store',[LoanController::class,'loanStore'])->name('loan.store');
+Route::get('loan/view/{loan_id}',[LoanController::class,'viewloan'])->name('loan.view');
+Route::get('loan/delete/{loan_id}',[LoanController::class,'deleteloan'])->name('loan.delete');
 
 Route::get('/loantype',[LoanTypeController::class,'list'])->name('loantype');
 Route::get('/loantype/create',[LoanTypeController::class,'createform'])->name('loan.type.create');
@@ -82,6 +84,9 @@ Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
 Route::post('/loanapply/store',[LoanApplyController::class,'loanstore'])->name('loan.apply.store');
 
 Route::get('/criteria',[CriteriaController::class,'list'])->name('criteria');
+Route::get('criteria/create',[CriteriaController::class,'criteriaList'])->name('criteria.create');
+Route::post('criteria/store',[CriteriaController::class,'criteriaStore'])->name('criteria.store');
+
 Route::get('/loancriteria',[loanCriteriaController::class,'list'])->name('loancriteria');
 Route::get('/report',[ReportController::class,'reports'])->name('report');
 

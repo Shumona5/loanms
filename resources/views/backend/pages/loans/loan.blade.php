@@ -31,8 +31,8 @@
         <td>{{$data->number_of_months}}</td>
         <td>{{$data->status}}</td>
         <td>
-          <a href=""class="btn btn-success"> View </a>
-          <a href="" class="btn btn-danger"> Delete </a>
+          <a href="{{route('loan.view',$data->id)}}"class="btn btn-success"> View </a>
+          <a href="{{route('loan.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
           <a href="" class="btn btn-primary"> Upadte </a>
         </td>
       </tr> 

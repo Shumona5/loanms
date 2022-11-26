@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('loan_criteries', function (Blueprint $table) {
+        Schema::create('criterias', function (Blueprint $table) {
             $table->id();
-            $table->string('loan_id',50);
-            $table->string('criteria_id',50);
+            $table->string('title',50);
+            $table->text('description',100);
+            $table->integer('type_id');
+            $table->string('status',50)->default('active');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loan_criteries');
+        Schema::dropIfExists('criterias');
     }
 };
