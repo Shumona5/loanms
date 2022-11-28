@@ -38,4 +38,9 @@ class CriteriaController extends Controller
         return redirect()->back();
 
     }
+
+    public function delete()
+    {
+        
+    }
 }

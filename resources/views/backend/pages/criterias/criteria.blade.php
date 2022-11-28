@@ -28,7 +28,7 @@
         <td>{{$data->status}}</td>
         <td>
           <a href=""class="btn btn-success"> View </a>
-          <a href=""class="btn btn-danger"> Delete </a>
+          <a href="{{route('criteria.delete')}}"class="btn btn-danger"> Delete </a>
           <a href=""class="btn btn-primary"> Edit </a>
         </td>
       </tr> 

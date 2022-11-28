@@ -6,6 +6,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\CreateUserController;
 use App\Http\Controllers\CriteriaController;
 use App\Http\Controllers\FavouriteListController;
+use App\Http\Controllers\Frontend\LoanController as FrontendLoanController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoanApplyController;
 use App\Http\Controllers\LoanController;
@@ -33,6 +34,8 @@ Route::post('register',[WebHomeController::class,'registration'])->name('user.re
 Route::post('login',[WebHomeController::class,'login'])->name('user.login');
 
 Route::group(["middleware"=>'auth'],function(){
+    Route::get('searchloan',[FrontendLoanController::class,'list'])->name('user.searchloan');
+    Route::get('findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
     Route::get('logout',[WebHomeController::class,'logout'])->name('user.logout');
 
 });
@@ -86,6 +89,7 @@ Route::post('/loanapply/store',[LoanApplyController::class,'loanstore'])->name('
 Route::get('/criteria',[CriteriaController::class,'list'])->name('criteria');
 Route::get('criteria/create',[CriteriaController::class,'criteriaList'])->name('criteria.create');
 Route::post('criteria/store',[CriteriaController::class,'criteriaStore'])->name('criteria.store');
+Route::get('criteria/delete',[CriteriaController::class,'delete'])->name('criteria.delete');
 
 Route::get('/loancriteria',[loanCriteriaController::class,'list'])->name('loancriteria');
 Route::get('/report',[ReportController::class,'reports'])->name('report');

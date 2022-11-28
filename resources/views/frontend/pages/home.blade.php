@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="search-form">
-                                <a href="#">Find Loans </a>
+                                <a href="{{route('user.searchloan')}}">Find Loans </a>
                             </div>	
                         </form>	
                     </div>
