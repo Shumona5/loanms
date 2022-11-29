@@ -83,4 +83,9 @@ public function user()
     {
         return view('backend.pages.users.viewuser');
     }
+
+    // public function deleteUser()
+    // {
+        
+    // }
 }

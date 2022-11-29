@@ -30,7 +30,7 @@
         <td>{{$data->status}} </td>
         <td>
           <a href="{{route('user.view',$data->id)}}"class="btn btn-success"> View </a>
-          <a href="" class="btn btn-danger"> Delete </a>
+          <a href="{{route('user.delete')}}" class="btn btn-danger"> Delete </a>
           <a href="" class="btn btn-primary"> Upadte </a>
         </td>
       </tr>  

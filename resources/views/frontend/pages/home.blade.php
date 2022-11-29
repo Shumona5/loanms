@@ -13,19 +13,19 @@
                         </div>
                     </div>
                 </div>
-                <!-- Search Box -->
-                <div class="row">
+                <!-- Search Box -->             
+                <div class="row">            
                     <div class="col-xl-8">
                         <!-- form -->
-                        <form action="#" class="search-box">
+                        <form action="{{route('user.searchloan')}}" class="search-box">
                             <div class="input-form">
-                                <input type="text" placeholder="Loan Amount">
-                            </div>
+                                <input type="text"  name="amount"   placeholder="Loan Amount">
+                            </div>              
                             <div class="select-form">
                                 <div class="select-itms">
-                                    <select name="select" id="select1">
+                                    <select name="type_id" id="select1">
                                         @foreach ($data as $type )
-                                        <option value=""> {{$type->name}}</option> 
+                                        <option value="{{$type->id}}"> {{$type->name}}</option> 
                                         @endforeach
 
                                         
@@ -33,7 +33,8 @@
                                 </div>
                             </div>
                             <div class="search-form">
-                                <a href="{{route('user.searchloan')}}">Find Loans </a>
+                                
+                                <button type="submit" class="btn btn-primary"> Search Loans  </button>
                             </div>	
                         </form>	
                     </div>
