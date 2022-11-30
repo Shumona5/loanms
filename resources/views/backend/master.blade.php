@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - SB Admin</title>
+        <title> Loan Management System </title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="{{url('css/styles.css')}}" rel="stylesheet" />
         @notifyCss
@@ -20,7 +20,7 @@
 @include('backend.fixed.header')
 
 
-
+                                       
         <div id="layoutSidenav">
             
 

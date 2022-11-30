@@ -24,8 +24,15 @@ class LoanController extends Controller
         return view('frontend.pages.findloan');
     }
 
-    public function view()
+    public function view($loan_id)
     {
-        return view('frontend.pages.viewNow');
+        // dd($loan_id);
+        $loan=Loan::find($loan_id); 
+       
+        
+        return view('frontend.pages.viewNow',compact('loan'));
     }
+
+
+   
 }

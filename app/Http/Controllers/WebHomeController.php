@@ -25,10 +25,7 @@ class WebHomeController extends Controller
     {
         //dd($request->all());
 
-
-
-        
-   $fileName=null;
+    $fileName=null;
    if($request->hasFile('image')){
       $fileName=date('ymdhi'). "." . $request->file('image')->getClientOriginalExtension();
    $request->file('image')->storeAs('/uploads',$fileName);

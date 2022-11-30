@@ -12,7 +12,7 @@
 
                 <a class="nav-link" href="{{route('admin')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                    Admin
+                    Users
                 </a>
 
 

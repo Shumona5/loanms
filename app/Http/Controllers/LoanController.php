@@ -14,8 +14,8 @@ class LoanController extends Controller
       // $loan_list=Loan::all();
       // dd($loan_list);
       $loan_list=Loan::paginate(3);
-      
-      return view('backend.pages.loans.loan',compact('loan_list'));
+
+       return view('backend.pages.loans.loan',compact('loan_list'));
     }
 
     public function createform()
@@ -28,8 +28,14 @@ class LoanController extends Controller
 
     public function loanStore(Request $request)
     {
-        // dd($request ->all());
+        // dd($request ->all());        
 
+        $filename=null;
+        if($request->hasFile('image'))
+        {
+          $filename=date('Ymdhsi').'.'.$request->file('image')->getClientOriginalExtension();
+          $request->file('image')->storeAs('/uploads',$filename);
+        }
 
       Loan::create([
         'title'=>$request->loan_title,
@@ -37,6 +43,7 @@ class LoanController extends Controller
         'type_id'=>$request->loan_type_id,
         'bank_id'=>auth()->user()->id,       
         'loan_amount'=>$request->loan_amount,
+        'image'=>$filename,
         'number_of_months'=>$request->number_of_months
 
       ]);

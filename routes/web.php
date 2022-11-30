@@ -33,9 +33,11 @@ Route::get('/',[WebHomeController::class,'home'])->name('user.home');
 Route::post('register',[WebHomeController::class,'registration'])->name('user.registration');
 Route::post('login',[WebHomeController::class,'login'])->name('user.login');
 
-Route::get('searchloan',[FrontendLoanController::class,'list'])->name('user.searchloan');
-Route::get('viewnow',[FrontendLoanController::class,'view'])->name('user.viewnow');
-Route::get('findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
+Route::get('/searchloan',[FrontendLoanController::class,'list'])->name('user.searchloan');
+Route::get('/viewnow/{loan_id}',[FrontendLoanController::class,'view'])->name('user.viewnow');
+Route::get('/findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
+
+
 
 Route::group(["middleware"=>'auth'],function(){
    

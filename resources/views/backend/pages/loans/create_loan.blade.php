@@ -2,7 +2,7 @@
 
 @section('Content')
 
-<form action="{{route('loan.store')}}" method="POST"> 
+<form action="{{route('loan.store')}}" method="POST" enctype="multipart/form-data"> 
 @csrf
     <div>
     <label for="loan_title"> Loan Title: </label>
@@ -24,6 +24,11 @@
     <div>
         <label for="num_of_months"> Number Of month(s): </label>
         <input type="number" class="form-control" id="num_of_months"  name="number_of_months" > 
+    </div>
+
+    <div>
+        <label for="image"> Image </label>
+        <input type="file" class="form-control" id="image"  name="image" > 
     </div>
 
     <div class="form-group">

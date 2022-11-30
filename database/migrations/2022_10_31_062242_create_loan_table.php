@@ -22,10 +22,11 @@ return new class extends Migration
             $table->integer('bank_id');
             $table->double('loan_amount',10,2);
             $table->integer('number_of_months');
-            $table->timestamps();
+           $table->string('image')->nullable();
+            $table->timestamps();         
         });
     }
-
+                                                  
     /**
      * Reverse the migrations.
      *
