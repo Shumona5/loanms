@@ -37,7 +37,7 @@
   <th scope="row"> {{$key+1}} </th>
   <td>{{$data->name}}</td>
   <td>{{$data->email}}</td>
-  <td><img width="100px"    src="{{url('/uploads/'. $data->logo)}}" alt="image"></td>
+  <td><img width="100px" src="{{url('/uploads/'. $data->logo)}}" alt="image"></td>
   <td>{{$data->status}}</td>
   <td>{{$data->address}}</td>
   <td>{{$data->contact}}</td>

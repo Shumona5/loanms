@@ -21,6 +21,10 @@ public function store(Request $request)
      $loginInfo=$request->except('_token');
      if(Auth::attempt($loginInfo))
      {
+        if(auth()->user()->role=='user')
+             {
+                   return redirect()->route('user.home');
+              }
         return redirect()->route('dashboard');
      }
      return redirect()->back()->with('message','Invalid LoginInfo');
@@ -32,46 +36,11 @@ public function user()
         // $user_list=User::all();
             $user_list=User::paginate(5);
         return view('backend.pages.users.loan_seeker',compact('user_list'));
-     }
+    }
     
 
-    public function createform()
-    {
-        return view('backend.pages.users.create');
-    }
-
-
-    public function userstore(Request $request)
-    {
-        // dd($request ->all());
-        $request->validate([
-           'user_name'=>'required',
-            'user_mail'=>'required|unique:users,email',
-            'image'=>'required'
-        ]);
-
-        $fileName=null;
-        if($request->hasFile('image'))
-        {
-         //    generate name
-            $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('/uploads',$fileName);
-     
-        }
-
-        User::create([
-            'name'=>$request->user_name,
-            'email'=>$request->user_mail,
-            'password'=>$request->password,
-            'image'=>$fileName,
-            'status'=>$request->status,
-            'contact'=>$request->contact,
-            'address'=>$request->address,
-            
-        ]);
-
-        return redirect()->back();
-    }
+    
+    
 
     public function logout()
     {
@@ -84,8 +53,8 @@ public function user()
         return view('backend.pages.users.viewuser');
     }
 
-    // public function deleteUser()
-    // {
+     public function deleteUser()
+     {
         
-    // }
+     }
 }

@@ -4,7 +4,7 @@
 
 
 <h1> Loan Seeker's List </h1>
-<a href="{{url('/users/create')}}"class="btn btn-primary"> Create New user </a>
+
 <table class="table">
     <thead>
       <tr>
@@ -30,8 +30,8 @@
         <td>{{$data->status}} </td>
         <td>
           <a href="{{route('user.view',$data->id)}}"class="btn btn-success"> View </a>
-          <a href="{{route('user.delete')}}" class="btn btn-danger"> Delete </a>
-          <a href="" class="btn btn-primary"> Upadte </a>
+          <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
+          <a href="" class="btn btn-primary"> Update </a>
         </td>
       </tr>  
       @endforeach

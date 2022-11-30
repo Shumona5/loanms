@@ -12,14 +12,20 @@ class LoanController extends Controller
     public function list(Request $request)                    
     {                                                           
         //  dd($request->all());                                         
-         if($request->amount )
+        //  if($request->amount )
+
      $loans=Loan::where('type_id',$request->type_id)->get();      
         return view('frontend.pages.featured_loan',compact('loans'));         
     }
-                              
+                   
 
     public function findloan()
     {
         return view('frontend.pages.findloan');
+    }
+
+    public function view()
+    {
+        return view('frontend.pages.viewNow');
     }
 }

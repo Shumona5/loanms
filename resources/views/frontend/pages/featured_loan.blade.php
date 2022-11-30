@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Apply Now </a>
+                        <a href="{{route('user.viewnow')}}"> View Now </a>
                         <span>{{$loan->number_of_months}}</span>       
                     </div>
                 </div>

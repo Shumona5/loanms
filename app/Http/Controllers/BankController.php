@@ -28,20 +28,27 @@ class BankController extends Controller
 
 public function bankstore(Request $request)
 {
+
 //   dd($request->all());
-
+   
    $request-> validate([
-       'bank_name'=>'required|unique:banks,name',
-      'bank_email'=>'required|unique:banks,email'
-   ]);
+      'bank_name'=>'required|unique:banks,name',
+     'bank_email'=>'required|unique:banks,email'
+  ]);
 
-    $filename=null;
+   $fileName=null;
+   if($request->hasFile('bankLogo')){
+      $fileName=date('ymdhi'). "." . $request->file('bankLogo')->getClientOriginalExtension();
+   $request->file('bankLogo')->storeAs('/uploads',$fileName);
 
+   }
+
+    
  Bank::create([
 
       'name'=>$request->bank_name,
       'email'=>$request->bank_email,
-      "logo" =>$request->bankLogo,
+      'logo' =>$fileName,
       'contact'=>$request->contact,
       'address'=>$request->address,
       'status'=>$request->status

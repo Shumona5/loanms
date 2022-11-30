@@ -33,9 +33,12 @@ Route::get('/',[WebHomeController::class,'home'])->name('user.home');
 Route::post('register',[WebHomeController::class,'registration'])->name('user.registration');
 Route::post('login',[WebHomeController::class,'login'])->name('user.login');
 
+Route::get('searchloan',[FrontendLoanController::class,'list'])->name('user.searchloan');
+Route::get('viewnow',[FrontendLoanController::class,'view'])->name('user.viewnow');
+Route::get('findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
+
 Route::group(["middleware"=>'auth'],function(){
-    Route::get('searchloan',[FrontendLoanController::class,'list'])->name('user.searchloan');
-    Route::get('findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
+   
     Route::get('logout',[WebHomeController::class,'logout'])->name('user.logout');
 
 });
@@ -57,10 +60,9 @@ Route::get('/logout',[UserController::class,'logout'])->name('logout');
 Route::get('/',[HomeController::class,'home'])->name('dashboard');
 
 Route::get('/user',[UserController::class,'user'])->name('user');
-Route::get('/users/create',[UserController::class,'createform']);
-Route::post('/user/store',[UserController::class,'userStore'])->name('user.store');
+
 Route::get('/user/view/{user_id}',[UserController::class,'viewUser'])->name('user.view');
-Route::get('/user/update',[UserController::class,'deleteUser'])->name('user.delete');
+Route::get('/user/update/{user_id}',[UserController::class,'deleteUser'])->name('user.delete');
 
 Route::get('/bank',[BankController::class,'bank'])->name('bank');
 Route::get('/bank/create',[BankController::class,'createform'])->name('bank.create');

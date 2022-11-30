@@ -24,12 +24,24 @@ class WebHomeController extends Controller
     public function registration(Request $request)
     {
         //dd($request->all());
+
+
+
+        
+   $fileName=null;
+   if($request->hasFile('image')){
+      $fileName=date('ymdhi'). "." . $request->file('image')->getClientOriginalExtension();
+   $request->file('image')->storeAs('/uploads',$fileName);
+
+   }
+
           User::create([
               'name'=>$request->user_name,
               'email'=>$request->user_email,
               'password'=>bcrypt($request->password),
               'contact'=>$request->contact,
-              'role'=>'user'
+              'role'=>'user',
+              'image'=>$fileName
 
           ]);
 
