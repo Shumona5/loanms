@@ -23,10 +23,10 @@
     <tbody>
       @foreach ($loan_list as $key=>$data )
       <tr>
-        <th scope="row">{{$key+1}}</th>
+        <th scope="row">{{$key+1}}</th>       
         <td>{{$data->title}}</td>
         <td>{{$data->details}}</td>
-        <td>{{$data->loantype->name}}</td>
+        <td>{{$data->loantype->name}}</td>               
         <td>{{$data->bank_id}}</td>
         <td>{{$data->loan_amount}}</td>                     
         <td>{{$data->number_of_months}}</td>
@@ -36,10 +36,10 @@
         <td>
           <a href="{{route('loan.view',$data->id)}}"class="btn btn-success"> View </a>
           <a href="{{route('loan.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
-          <a href="" class="btn btn-primary"> Upadte </a>
+          <a href="{{route('loan.edit',$data->id)}}" class="btn btn-primary"> Edit </a>
         </td>
       </tr> 
-      @endforeach
+      @endforeach      
       
       
     </tbody>

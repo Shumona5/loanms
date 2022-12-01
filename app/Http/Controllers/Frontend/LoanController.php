@@ -21,7 +21,9 @@ class LoanController extends Controller
 
     public function findloan()
     {
-        return view('frontend.pages.findloan');
+        $loans=Loan::all() ; 
+        // dd($loans);          
+        return view('frontend.pages.findloan',compact('loans'));
     }
 
     public function view($loan_id)

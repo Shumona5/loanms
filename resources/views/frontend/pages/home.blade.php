@@ -134,10 +134,10 @@
                         </div>
                     </div>
                     <div class="items-link f-right">
-                        <a href="job_details.html">Apply </a>
+                        <a href="{{route('user.viewnow', $loan->id)}}"> View Now </a>
                         <span>{{$loan->loan_amount}}</span>
                     </div>
-            
+                 
             
                 </div>
                 

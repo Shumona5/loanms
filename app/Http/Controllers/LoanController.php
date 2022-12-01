@@ -58,14 +58,14 @@ class LoanController extends Controller
       return view('backend.pages.loans.view_loan',compact('loan'));
     }
     
-    public function deleteloan(int $loan_id)
+    public function deleteloan($loan_id)
     {
       
-        //  dd($loan_id);
-        $details=loan::find('$loan_id');
+      $details=loan::find($loan_id);
+      //  dd($details);
         if($details)
         {
-          $details->delete;
+          $details->delete();
           notify()->success('Loan deleted Successfully.');
           return redirect()->back();
         }
@@ -74,4 +74,25 @@ class LoanController extends Controller
           return redirect();
         }
     }
+
+
+    public function editloan($loan_id)
+    {
+      // dd($loan_id);    
+        $loan=Loan::find($loan_id);  
+        $loan_types=LoanType::all();  
+        return view('backend.pages.loans.edit_loan',compact('loan','loan_types'));
+    }
+
+    public function updateLoan(Request $request, $loan_id)
+    {                                                             
+          // dd($request->all()); 
+          $loan=Loan::find($loan_id);
+          $loan->update([
+          'title'=>$request->loan_title,
+          'loan_amount'=>$request->loan_amount
+        ]);
+         notify()->success(' Loan Update Successfully'); 
+        return redirect()->route('loan');
+}            
 }

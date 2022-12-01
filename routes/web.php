@@ -62,7 +62,6 @@ Route::get('/logout',[UserController::class,'logout'])->name('logout');
 Route::get('/',[HomeController::class,'home'])->name('dashboard');
 
 Route::get('/user',[UserController::class,'user'])->name('user');
-
 Route::get('/user/view/{user_id}',[UserController::class,'viewUser'])->name('user.view');
 Route::get('/user/update/{user_id}',[UserController::class,'deleteUser'])->name('user.delete');
 
@@ -75,12 +74,16 @@ Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('adm
 Route::put('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
 
 Route::get('/admins',[AdminController::class,'admin'])->name('admin');
-
+                                                                         
 Route::get('/loans',[LoanController::class,'loan'])->name('loan');
 Route::get('/loan/create',[LoanController::class,'createform'])->name('loan.create');
-Route::post('loan/store',[LoanController::class,'loanStore'])->name('loan.store');
-Route::get('loan/view/{loan_id}',[LoanController::class,'viewloan'])->name('loan.view');
-Route::get('loan/delete/{loan_id}',[LoanController::class,'deleteloan'])->name('loan.delete');
+Route::post('/loan/store',[LoanController::class,'loanStore'])->name('loan.store');
+Route::get('/loan/view/{loan_id}',[LoanController::class,'viewloan'])->name('loan.view');
+Route::get('/loan/delete/{loan_id}',[LoanController::class,'deleteloan'])->name('loan.delete');
+Route::get('/loan/edit/{loan_id}',[LoanController::class,'editloan'])->name('loan.edit');
+Route::put('/loan/update/{loan_id}',[LoanController::class,'updateLoan'])->name('loan.update');
+
+
 
 Route::get('/loantype',[LoanTypeController::class,'list'])->name('loantype');
 Route::get('/loantype/create',[LoanTypeController::class,'createform'])->name('loan.type.create');

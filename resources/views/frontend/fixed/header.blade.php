@@ -17,7 +17,7 @@
                                 <nav class="d-none d-lg-block">
                                     <ul id="navigation">
                                         <li><a href="{{route('user.home')}}">Home</a></li>
-                                        <li><a href="{{route('user.findloan')}}">Find a loan </a></li>
+                                        <li><a href="{{route('user.findloan')}}"> All Loans </a></li>
                                         <li><a href="about.html">About</a></li>
                                         <li><a href="#">Page</a>
                                             <ul class="submenu">
