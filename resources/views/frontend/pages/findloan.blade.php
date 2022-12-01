@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>                                          
-        <div class="row justify-content-center">
+        <div class="row justify-content-center">          
             <div class="col-xl-10"> 
                 @foreach ($loans as $loan)
                  <!-- single-job-content -->
