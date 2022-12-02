@@ -28,13 +28,13 @@
                             <ul>
                                 <li> bank </li>
                                 <li><i class="fas fa-map-marker-alt"></i>{{$loan->type_id}}</li>
-                                <li>{{$loan->loan_amount}}</li>
+                                <li>{{$loan->loan_amount}} BDT </li>
                             </ul>
                         </div>
                     </div>
                     <div class="items-link f-right">
                         <a href="{{route('user.viewnow', $loan->id)}}"> View Now </a>
-                        <span>{{$loan->number_of_months}}</span>       
+                        <span>{{$loan->number_of_months}} months </span>       
                     </div>
                 </div>
 

@@ -135,7 +135,7 @@
                     </div>
                     <div class="items-link f-right">
                         <a href="{{route('user.viewnow', $loan->id)}}"> View Now </a>
-                        <span>{{$loan->loan_amount}}</span>
+                        <span>{{$loan->loan_amount}} BDT </span>
                     </div>
                  
             

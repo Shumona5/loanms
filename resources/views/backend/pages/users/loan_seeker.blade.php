@@ -31,7 +31,7 @@
         <td>
           <a href="{{route('user.view',$data->id)}}"class="btn btn-success"> View </a>
           <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
-          <a href="" class="btn btn-primary"> Update </a>
+          <a href="{{route('user.edit',$data->id)}}" class="btn btn-primary"> Edit </a>
         </td>
       </tr>  
       @endforeach

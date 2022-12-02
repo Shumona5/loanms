@@ -37,10 +37,6 @@ public function user()
             $user_list=User::paginate(5);
         return view('backend.pages.users.loan_seeker',compact('user_list'));
     }
-    
-
-    
-    
 
     public function logout()
     {
@@ -53,8 +49,50 @@ public function user()
         return view('backend.pages.users.viewuser');
     }
 
-     public function deleteUser()
+     public function deleteUser(int $user_id)
      {
-        
+        $user=User::find($user_id);
+        if($user)
+        {
+            $user->delete();
+            notify()->success('User Delete Successfully');
+            return redirect()->back();
+        }else
+        {
+           notify()->error('User Not Found');
+            return redirect()->back();
+        }
+
      }
+
+     public function editUser(int $user_id)
+     {
+        $user=User::find($user_id);
+        return view ('backend.pages.users.edit_user',compact('user'));  
+     }
+
+
+     public function updateUser(Request $request, $user_id)
+     {
+        $user=User::find($user_id);
+        $fileName=$user->image;
+      if($request->hasFile('image'))
+      {
+        $fileName=date('Ymdhmi').'.'.$request->file('image');
+        $request->file('image')->storeAs('/upload',$fileName);
+      }
+
+      $user->update([
+        'name'=>$request->user_name,
+        'image' =>$fileName,
+        'contact'=>$request->contact,
+        'address'=>$request->address,
+        'status'=>$request->status 
+      ]);
+    notify()->success('User Update Successfully');
+      return redirect()->route('user');
+
+     }
+
+
 }

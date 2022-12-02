@@ -63,7 +63,9 @@ Route::get('/',[HomeController::class,'home'])->name('dashboard');
 
 Route::get('/user',[UserController::class,'user'])->name('user');
 Route::get('/user/view/{user_id}',[UserController::class,'viewUser'])->name('user.view');
-Route::get('/user/update/{user_id}',[UserController::class,'deleteUser'])->name('user.delete');
+Route::get('/user/delete/{user_id}',[UserController::class,'deleteUser'])->name('user.delete');
+Route::get('/user/edit/{user_id}',[UserController::class,'editUser'])->name('user.edit');
+Route::put('/user/update/{user_id}',[UserController::class,'updateUser'])->name('user.update');
 
 Route::get('/bank',[BankController::class,'bank'])->name('bank');
 Route::get('/bank/create',[BankController::class,'createform'])->name('bank.create');
