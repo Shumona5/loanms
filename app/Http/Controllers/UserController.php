@@ -34,11 +34,11 @@ public function user()
     {
         
         // $user_list=User::all();
-            $user_list=User::paginate(5);
+            $user_list=User::where('role','user')-> paginate(5);
         return view('backend.pages.users.loan_seeker',compact('user_list'));
-    }
+    }                
 
-    public function logout()
+    public function logout()         
     {
         Auth::logout();
         return redirect()->back()->with('message','logout Successful');

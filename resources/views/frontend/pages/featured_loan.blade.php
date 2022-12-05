@@ -7,9 +7,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-tittle text-center">
-                    <span>Recent Loans </span>
+                    <span>Recent Loans </span>                   
                     <h2>Featured Loans</h2>
-                </div>
+                </div>                                      
             </div>
         </div>
         <div class="row justify-content-center">

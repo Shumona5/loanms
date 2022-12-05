@@ -33,8 +33,8 @@ public function bankstore(Request $request)
 //   dd($request->all());
    
    $request-> validate([
-      'bank_name'=>'required|unique:banks,name',
-     'bank_email'=>'required|unique:banks,email'
+      'bank_name'=>'required|unique:users,name',
+     'bank_email'=>'required|unique:users,email'
   ]);
 
    $fileName=null;
@@ -56,7 +56,7 @@ public function bankstore(Request $request)
       'address'=>$request->address,
       'status'=>$request->status
 
-   ]);
+   ]);                                               
 
    notify()->success('Bank Created Successfully'); 
    return redirect()->back();
@@ -65,7 +65,7 @@ public function bankstore(Request $request)
 
 public function deleteBank(int $bank_id)
 {      //dd($bank_id);
-         $test=Bank::find($bank_id);
+         $test=User::find($bank_id);
          if($test)
          {
             $test->delete();
@@ -77,20 +77,20 @@ public function deleteBank(int $bank_id)
 public function viewBank(int $bank_id)
 {
    //dd($bank_id);
-   $bank=Bank::find($bank_id);
+   $bank=User::find($bank_id);
     
    return view('backend.pages.banks.view',compact('bank'));
 }
 
 public function editBank($bank_id)
 {
-   $bank=Bank::find($bank_id);
+   $bank=User::find($bank_id);
    return view('backend.pages.banks.edit',compact('bank'));
 }
     
 public function update(Request $request,$bank_id)
 {      //dd($request->all());
-      $bank=Bank::find($bank_id);
+      $bank=User::find($bank_id);
       $fileName=$bank->logo;
       if($request->hasFile('bankLogo'))
       {
@@ -101,7 +101,7 @@ public function update(Request $request,$bank_id)
       $bank->update([
          'name'=>$request->bank_name,
          'email'=>$request->bank_email,
-         "logo" =>$fileName,
+         "image" =>$fileName,
          'contact'=>$request->contact,
          'address'=>$request->address,
          'status'=>$request->status 

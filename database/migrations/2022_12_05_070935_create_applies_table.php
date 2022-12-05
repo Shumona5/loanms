@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('apply_now', function (Blueprint $table) {
+        Schema::create('applies', function (Blueprint $table) {
             $table->id();
             $table->integer('loan_id');
+            $table->integer('user_id');
             $table->string('name');
             $table->date('birth_date');
-            $table->string('marital_status',10);
+            $table->string('marital_status',15);
             $table->string('email')->unique();
             $table->string('phone_number',20);
             $table->text('address');
@@ -28,7 +29,8 @@ return new class extends Migration
             $table->string('years_of_experience');
             $table->double('gross_monthly_income');
             $table->string('status')->default('pending');
-            $table->timestamps();
+            $table->text('remarks')->nullable();
+            $table->timestamps();                                            
         });
     }
 
@@ -39,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apply_now');
+        Schema::dropIfExists('applies');
     }
 };

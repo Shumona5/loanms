@@ -20,7 +20,7 @@
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
                                 
-                                <a href="{{route('user.applynow')}}"> Apply Now..... </a>    
+                                <a href="{{route('user.applynow',$loan->id)}}"> Apply Now..... </a>    
                             </button>
                         </div>
                     </div>
