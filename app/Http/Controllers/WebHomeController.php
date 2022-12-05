@@ -37,6 +37,7 @@ class WebHomeController extends Controller
               'email'=>$request->user_email,
               'password'=>bcrypt($request->password),
               'contact'=>$request->contact,
+              'about'=>$request->about,
               'role'=>'user',
               'image'=>$fileName
 
@@ -67,5 +68,10 @@ class WebHomeController extends Controller
         auth()->logout();
         notify()->success('logout success');
         return redirect()->back();
+    }
+
+    public function profile()
+    {
+        return view('frontend.pages.profile');
     }
   }

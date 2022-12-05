@@ -13,7 +13,7 @@ class LoanController extends Controller
         
       // $loan_list=Loan::all();
       // dd($loan_list);
-      $loan_list=Loan::paginate(3);
+      $loan_list=Loan::with(['loantype','bank'])->paginate(3);
 
        return view('backend.pages.loans.loan',compact('loan_list'));
     }

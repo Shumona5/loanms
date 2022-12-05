@@ -27,7 +27,7 @@
         <td>{{$data->title}}</td>
         <td>{{$data->details}}</td>
         <td>{{$data->loantype->name}}</td>               
-        <td>{{$data->bank_id}}</td>
+        <td>{{$data->bank->name}}</td>
         <td>{{$data->loan_amount}}</td>                     
         <td>{{$data->number_of_months}}</td>
         <td>{{$data->status}}</td>

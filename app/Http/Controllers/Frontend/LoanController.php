@@ -35,6 +35,15 @@ class LoanController extends Controller
         return view('frontend.pages.viewNow',compact('loan'));
     }
 
+    public function applyNow()
+    {
+        // dd("dsfasfs");
+        return view('frontend.pages.applynow');
+    }
 
+    public function applyNowForm(Request $request)
+    {
+            //  dd($request->all());
+    }
    
 }

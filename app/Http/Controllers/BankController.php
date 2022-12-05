@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bank;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -13,7 +14,7 @@ class BankController extends Controller
 
      // variable=Model name::all-method(); ....formula....
    //  $bank_list=Bank::all();
-    $bank_list=Bank::paginate(5);
+    $bank_list=User::where('role','bank')->paginate(5);
       // dd($bank_list);
 
 
@@ -44,11 +45,13 @@ public function bankstore(Request $request)
    }
 
     
- Bank::create([
+ User::create([
 
       'name'=>$request->bank_name,
       'email'=>$request->bank_email,
-      'logo' =>$fileName,
+      'role'=>'bank',
+      'password'=>bcrypt('12345'),
+      'image' =>$fileName,
       'contact'=>$request->contact,
       'address'=>$request->address,
       'status'=>$request->status

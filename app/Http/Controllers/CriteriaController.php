@@ -39,8 +39,25 @@ class CriteriaController extends Controller
 
     }
 
-    public function delete()
+    public function delete(int $criteria_id)
     {
+        $criteria=Criteria::find($criteria_id);
+        if($criteria)
+        {
+            $criteria->delete();
+            notify()->success('Criteria Deleted Successfully');
+            return redirect()->back();
+        } else
+        {
+            notify()->error('Criteria not Found');
+            return redirect()->back();
+        }
         
+    }
+
+    public function view(int $criteria_id)
+    {
+         $criteria=Criteria::find($criteria_id); 
+        return view('backend.pages.criterias.view_criteria',compact('criteria'));
     }
 }

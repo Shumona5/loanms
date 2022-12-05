@@ -44,7 +44,7 @@
                                 
                            
                            <div class="header-btn d-none f-right d-lg-block">
-                                <a href="#" class="btn head-btn1"> {{auth()->user()->name}}</a>
+                                <a href="{{route('user.profile')}}" class="btn head-btn1"> {{auth()->user()->name}}</a>
                                 <a href="{{route('user.logout')}}" class="btn head-btn2" > Logout</a>
                             </div>
                             @endauth
@@ -63,3 +63,34 @@
    </div>
     <!-- Header End -->
 </header>
+
+<!-- Modal -->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"> User Login </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="{{route('user.login')}}" method="POST">
+                @csrf
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="email"    placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1"   name="password"   placeholder="Password">
+                </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+ 

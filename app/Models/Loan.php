@@ -16,6 +16,11 @@ class Loan extends Model
       return $this-> belongsTo(LoanType::class,'type_id','id');
    }
 
+   public function bank()
+   {
+      return $this-> belongsTo(User::class,'bank_id','id');
+   }
+
 
 }
 
