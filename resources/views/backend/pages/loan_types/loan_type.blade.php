@@ -26,8 +26,8 @@
             <td> <img width="100px" src="{{url('/uploads/'. $data->image)}}" alt="image"></td>
             <td>{{$data->status}}</td>
             <td>
-              <a href=""class="btn btn-success"> View </a>
-              <a href="{{route('admin.loantype.delete')}}" class="btn btn-danger"> Delete </a>
+              <a href="{{route('loantype.view',$data->id)}}"class="btn btn-success"> View </a>
+              <a href="{{route('loantype.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
               <a href="" class="btn btn-primary"> Edit </a>
             </td>
           </tr> 

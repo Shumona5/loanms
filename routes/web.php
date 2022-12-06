@@ -47,6 +47,7 @@ Route::group(["middleware"=>'auth'],function(){
     Route::post('/applynowform/{loan_id}',[FrontendLoanController::class,'applyNowForm'])->name('user.applyform');
 
 
+
 });
 
 
@@ -80,6 +81,7 @@ Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('adm
 Route::put('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
 
 Route::get('/admins',[AdminController::class,'admin'])->name('admin');
+Route::get('loanappliers/view/{appliers_id}',[AdminController::class,'viewLoanAppliers'])->name('loanappliers.view');
                                                                          
 Route::get('/loans',[LoanController::class,'loan'])->name('loan');
 Route::get('/loan/create',[LoanController::class,'createform'])->name('loan.create');
@@ -89,12 +91,11 @@ Route::get('/loan/delete/{loan_id}',[LoanController::class,'deleteloan'])->name(
 Route::get('/loan/edit/{loan_id}',[LoanController::class,'editloan'])->name('loan.edit');
 Route::put('/loan/update/{loan_id}',[LoanController::class,'updateLoan'])->name('loan.update');
 
-
-
 Route::get('/loantype',[LoanTypeController::class,'list'])->name('loantype');
 Route::get('/loantype/create',[LoanTypeController::class,'createform'])->name('loan.type.create');
 Route::post('/loantype/store',[LoanTypeController::class,'loantypelist'])->name('loantype.store');
-Route::get('/loantype/delete',[LoanTypeController::class,'deleteloantype'])->name('admin.loantype.delete');
+Route::get('/loantype/delete/{loantype_id}',[LoanTypeController::class,'deleteloantype'])->name('loantype.delete');
+Route::get('/loantype/view/{loantype_id}',[LoanTypeController::class,'viewloantype'])->name('loantype.view');
 
 Route::get('/loanapply',[LoanApplyController::class,'list'])->name('loanapply');
 Route::get('/loanapply/create',[LoanApplyController::class,'createform']);

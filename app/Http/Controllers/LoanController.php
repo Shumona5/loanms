@@ -69,7 +69,8 @@ class LoanController extends Controller
           notify()->success('Loan deleted Successfully.');
           return redirect()->back();
         }
-        else{
+        else
+        {
           notify()->Error('Loan not Found');
           return redirect();
         }

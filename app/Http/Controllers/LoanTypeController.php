@@ -40,8 +40,6 @@ public function loantypelist(Request $request)
        $request->file('picture')->storeAs('/uploads',$fileName);
 
    }
-
-
     LoanType::create([
         'name'=>$request->loan_name,
         'description'=>$request->description,
@@ -52,8 +50,25 @@ public function loantypelist(Request $request)
     return redirect()-> back();
 }
 
-public function deleteloantype()
+public function deleteloantype(string $loantype_id)
 {
-    
+    $loantypes=LoanType::find($loantype_id);
+         if($loantypes)
+         {
+            $loantypes->delete();
+            notify()->success('Loan Types Deleted Successfully');
+            return redirect()->back();
+
+         }else
+         {
+           notify()->error('Loan Types Not Found');
+            return redirect();
+         }
 }
+
+public function viewloantype($loantype_id)
+{
+    return view('backend.pages.loan_types.view_loantype');
+}
+
 }
