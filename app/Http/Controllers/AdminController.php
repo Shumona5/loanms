@@ -15,6 +15,7 @@ class AdminController extends Controller
 
     public function viewLoanAppliers( int $appliers_id)
     {
-        return view('backend.pages.admin.loan_appliers_form_view');
+        $apply_list=Apply::find($appliers_id);
+        return view('backend.pages.admin.loan_appliers_form_view',compact('apply_list'));
     }
 }
