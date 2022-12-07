@@ -55,7 +55,7 @@
 <p>
     <div class="row">
         <div class="col-md-3">  
-        <button type="submit"  class="btn btn-success"> Accept </button>
+          <a href="{{route('loanappliers.accept',$apply_list->id)}}" class="btn btn-success"> Accept </a> 
         </div>
         <div class="col-md-6"> 
             <button type="submit"  class="btn btn-danger"> Reject </button>
@@ -65,8 +65,5 @@
         </div>
     </div>
 </p>
-
-
-
 
 @endsection

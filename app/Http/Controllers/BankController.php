@@ -30,7 +30,7 @@ class BankController extends Controller
 public function bankstore(Request $request)
 {
 
-//   dd($request->all());
+//  dd($request->all());
    
    $request-> validate([
       'bank_name'=>'required|unique:users,name',
@@ -91,6 +91,7 @@ public function editBank($bank_id)
 public function update(Request $request,$bank_id)
 {      //dd($request->all());
       $bank=User::find($bank_id);
+      
       $fileName=$bank->logo;
       if($request->hasFile('bankLogo'))
       {

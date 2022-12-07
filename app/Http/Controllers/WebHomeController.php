@@ -23,7 +23,7 @@ class WebHomeController extends Controller
 
     public function registration(Request $request)
     {
-        //dd($request->all());
+        // dd($request->all());
 
     $fileName=null;
    if($request->hasFile('image')){
@@ -31,7 +31,7 @@ class WebHomeController extends Controller
    $request->file('image')->storeAs('/uploads',$fileName);
 
    }
-
+              
           User::create([
               'name'=>$request->user_name,
               'email'=>$request->user_email,
