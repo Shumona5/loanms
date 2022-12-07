@@ -100,7 +100,7 @@ Route::get('/loanapply',[LoanApplyController::class,'list'])->name('loanapply');
 Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
 Route::get('loanappliers/view/{appliers_id}',[LoanApplyController::class,'viewLoanAppliers'])->name('loanappliers.view');
 Route::get('loanappliers/accept/{loanappliers_id}',[LoanApplyController::class,'loanAccept'])->name('loanappliers.accept');
- 
+Route::get('loanappliers/reject/{loanappliers_id}',[LoanApplyController::class,'loanReject'])->name('loanappliers.reject');
 
 Route::get('/criteria',[CriteriaController::class,'list'])->name('criteria');
 Route::get('criteria/create',[CriteriaController::class,'criteriaList'])->name('criteria.create');

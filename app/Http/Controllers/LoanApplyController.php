@@ -53,6 +53,18 @@ class LoanApplyController extends Controller
      notify()->success('Loan Appliers Information Accepted Successfully');
     return redirect()->back();
     }
+
+    public function loanReject(int $loanappliers_id)
+    {
+        $appliersInfo=Apply::find($loanappliers_id);
+        $appliersInfo->update([
+
+        'status'=>'Reject'
+        ]);
+        notify()->success('Loan Appliers Rejected Successfully');
+        return redirect()->back();
+
+    }
     
 }
 

@@ -58,7 +58,7 @@
           <a href="{{route('loanappliers.accept',$apply_list->id)}}" class="btn btn-success"> Accept </a> 
         </div>
         <div class="col-md-6"> 
-            <button type="submit"  class="btn btn-danger"> Reject </button>
+            <a href="{{route('loanappliers.reject',$apply_list->id)}}" class="btn btn-danger"> Reject </a> 
         </div>
         <div class="col-md-3">
             <button type="submit"  class="btn btn-primary"> Print </button>
