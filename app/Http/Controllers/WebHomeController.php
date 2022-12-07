@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Apply;
 use App\Models\Loan;
 use App\Models\LoanType;
 use App\Models\User;
@@ -72,6 +73,11 @@ class WebHomeController extends Controller
 
     public function profile()
     {
-        return view('frontend.pages.profile');
+       
+    //    I want to get all applications of this user. 
+        $userApplications=Apply::where('user_id',auth()->user()->id)->get();
+        // dd($userApplications);
+        
+        return view('frontend.pages.profile',compact('userApplications'));
     }
-  }
+  }                 
