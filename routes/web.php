@@ -44,6 +44,9 @@ Route::group(["middleware"=>'auth'],function(){
    
     Route::get('/logout',[WebHomeController::class,'logout'])->name('user.logout');
     Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
+    Route::get('profile/cancel/{profile_id}',[WebHomeController::class,'cancel'])->name('user.cancel');
+    Route::get('profile/edit/{profile_id}',[WebHomeController::class,'edit'])->name('profile.edit');
+    Route::get('profile/update/{profile_id}',[WebHomeController::class,'update'])->name('profile.update');
     Route::post('/applynowform/{loan_id}',[FrontendLoanController::class,'applyNowForm'])->name('user.applyform');
 
 

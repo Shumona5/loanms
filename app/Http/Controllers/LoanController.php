@@ -40,6 +40,7 @@ class LoanController extends Controller
       Loan::create([
         'title'=>$request->loan_title,
         'status'=>$request->status,
+        'details'=>$request->details,
         'type_id'=>$request->loan_type_id,
         'bank_id'=>auth()->user()->id,       
         'loan_amount'=>$request->loan_amount,

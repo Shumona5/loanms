@@ -80,4 +80,31 @@ class WebHomeController extends Controller
         
         return view('frontend.pages.profile',compact('userApplications'));
     }
+
+
+    public function cancel(int $profile_id)
+    {
+        $profileInfo=Apply::find($profile_id);
+        $profileInfo->update([
+            'status'=>'cancel'
+        ]);
+        notify()->success('Status Cancel successfully');
+        return redirect()->back();
+    }
+
+
+    public function edit(int $profile_id)
+    {
+        $profile=Apply::find($profile_id);
+        return view('frontend.pages.profile_edit');
+    }
+
+    public function update(Request $request ,int $profile_id)
+    {
+        $profile=Apply::find($profile_id);
+        $profile->update([
+            .........................
+        ]);
+
+    }
   }                 

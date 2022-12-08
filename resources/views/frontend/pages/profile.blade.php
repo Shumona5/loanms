@@ -67,7 +67,8 @@
                           <td>{{$application->name}}</</td>
                           <td>{{$application->status}}</</td>
                           <td>
-                          <a href=""class="btn btn-primary"> Cancel </a>
+                          <a href="{{route('user.cancel',$application->id)}}"class="btn btn-primary"> Cancel </a>
+                          <a href="{{route('profile.edit',$application->id)}}"class="btn btn-success"> Edit </a>
                           </td>
                         </tr>
                       @endforeach                
