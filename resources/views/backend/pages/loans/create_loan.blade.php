@@ -27,6 +27,11 @@
     </div>
 
     <div>
+        <label for="interest"> Interest: </label>
+        <input type="number" class="form-control" id="interest"  name="interest" > 
+    </div>
+
+    <div>
         <label for="image"> Image </label>
         <input type="file" class="form-control" id="image"  name="image" > 
     </div>

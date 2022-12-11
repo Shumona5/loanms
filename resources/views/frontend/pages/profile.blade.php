@@ -72,10 +72,7 @@
                           </td>
                         </tr>
                       @endforeach                
-                                                    {{-- Data entry     --}}
-                                               {{-- 1. Cancel '''''''' --}}
-                                              {{-- 2. Application edit + update........ --}}
-                                               
+                                                   
                      
                     </tbody>
                   </table>               

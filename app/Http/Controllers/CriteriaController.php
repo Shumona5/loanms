@@ -10,7 +10,7 @@ class CriteriaController extends Controller
 {
     public function list()
     {
-       $criterialist=Criteria::paginate(5);
+       $criterialist=Criteria::with('loan_type')-> paginate(5);
        
         return view('backend.pages.criterias.criteria',compact('criterialist'));
     }

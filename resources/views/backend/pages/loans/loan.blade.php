@@ -15,6 +15,7 @@
         <th scope="col">Bank ID</th>
         <th scope="col">Loan Amount</th>
         <th scope="col">Number Of Month(s)</th>
+        <th scope="col">Interest</th>
         <th scope="col"> Status </th>
         <th scope="col"> Image </th>
         <th scope="col"> Action </th>
@@ -30,6 +31,7 @@
         <td>{{$data->bank->name}}</td>
         <td>{{$data->loan_amount}}</td>                     
         <td>{{$data->number_of_months}}</td>
+        <td>{{$data->interest}}</td>
         <td>{{$data->status}}</td>
         <td><img  width="100px" src="{{url('/uploads/'.$data->image)}}" alt=""></td>
         

@@ -8,7 +8,9 @@
                     Dashboard
                 </a>
 
-
+                  @if (auth()->user()->role=='admin')      
+                      
+                
 
                 <a class="nav-link" href="{{route('admin')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-circle"></i></div>
@@ -26,6 +28,8 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Loan Seeker
                 </a>
+                @endif
+
 
                 <a class="nav-link" href="{{route('loan')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-money-bill-alt"></i></div>
@@ -49,10 +53,14 @@
 {{--                    Loan Criteria--}}
 {{--                </a>--}}
 
-                <a class="nav-link" href="{{route('loantype')}}">
+                      @if (auth()->user()->role=='admin')
+                          
+                     <a class="nav-link" href="{{route('loantype')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-list-ul"></i></div>
                     Loan Type
-                </a>
+                   </a>
+                    @endif
+ 
 
 
                 <a class="nav-link" href="{{route('report')}}">
@@ -62,7 +70,7 @@
 
                 <a class="nav-link" href="{{route('fav')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-heart"></i></div>
-                    Favourite List
+                    Wish List
                 </a>
 
 

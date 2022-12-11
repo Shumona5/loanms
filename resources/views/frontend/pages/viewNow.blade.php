@@ -1,6 +1,14 @@
 @extends('frontend.master')
 
 @section('Content')
+       
+@php 
+     $interest_amount=($loan->interest*$loan->loan_amount)/100 ;     // 5%=25000tk ,  
+    $total_payable=$loan->loan_amount+$interest_amount; 
+                                                                     //total_payable=25000+500000 tk          
+   $per_month=$total_payable/$loan->number_of_months;                // 24 months =21875 tk 
+    
+@endphp     
            
    <!-- Product section-->
         <section class="py-5">
@@ -9,12 +17,17 @@
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{url('/uploads/'.$loan->image)}}" alt="..." /></div>
                     <div class="col-md-6">
                         
-                        <h1 class="display-5 fw-bolder">{{$loan->title}}</h1>  <!--$variable name->db table name-->
+                        <h1 class="display-5 fw-bolder"> Title: {{$loan->title}}</h1>  <!--$variable name->db table name-->
                         <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through">{{$loan->loan_amount}}</span> 
-                            
-                        </div>
-                        <p class="lead"> {{$loan->details}}</p>
+                            <span class="text-decoration-line-through"> Loan Amount: {{$loan->loan_amount}} BDT </span> 
+                            <p>Interest Rate : {{$loan->interest}}  % </p>
+                            <p> Total Duration: {{$loan->number_of_months}} months </p>
+                            <p> Per Month Installment: {{ round($per_month,2)}}  BDT </p>
+                            <p> Total Returnable: {{$total_payable}} BDT </p> 
+                                   
+                        </div>  
+                        <p class="lead"> Loan Details: {{$loan->details}} </p>
+                        <br> 
                         <div class="d-flex">
                           
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">

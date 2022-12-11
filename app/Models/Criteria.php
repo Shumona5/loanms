@@ -9,4 +9,9 @@ class criteria extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function loan_type() 
+    {
+        return $this->belongsTo(LoanType::class,'type_id','id'); 
+    }  
 }

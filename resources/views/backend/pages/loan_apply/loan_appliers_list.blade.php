@@ -27,8 +27,8 @@
             <td>{{$apply->status}}</td>
             <td>
                 <a href="{{route('loanappliers.view',$apply->id)}}" class="btn btn-success"> View </a>
-                <a href="" class="btn btn-primary"> Edit </a>
-                <a href="" class="btn btn-danger"> Delete </a>
+                <a href="{{route('loanappliers.edit',$apply->id)}}" class="btn btn-primary"> Edit </a>
+                <a href="{{route('loanappliers.delete',$apply->id)}}" class="btn btn-danger"> Delete </a>
             </td>
           </tr>  
         @endforeach

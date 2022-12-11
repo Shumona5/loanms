@@ -16,11 +16,11 @@ class checkAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role=='admin'){
+        if(auth()->user()->role=='admin' OR auth()->user()->role=='bank'){ 
             
             return $next($request);
         }
-        notify()->warning('You are not Admin ');
+        notify()->warning('You are not Admin ');         
         return redirect()->route('user.home');
     }
 }

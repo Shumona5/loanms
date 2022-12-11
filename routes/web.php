@@ -83,7 +83,7 @@ Route::get('/bank/view/{bank_id}',[BankController::class,'viewBank'])->name('adm
 Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('admin.bank.edit');
 Route::put('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
 
-Route::get('/admins',[AdminController::class,'admin'])->name('admin');
+Route::get('/admin-users',[AdminController::class,'admin'])->name('admin');
                                                                         
 Route::get('/loans',[LoanController::class,'loan'])->name('loan');
 Route::get('/loan/create',[LoanController::class,'createform'])->name('loan.create');
@@ -101,7 +101,10 @@ Route::get('/loantype/view/{loantype_id}',[LoanTypeController::class,'viewloanty
 
 Route::get('/loanapply',[LoanApplyController::class,'list'])->name('loanapply');
 Route::get('/loanapply/create',[LoanApplyController::class,'createform']);
-Route::get('loanappliers/view/{appliers_id}',[LoanApplyController::class,'viewLoanAppliers'])->name('loanappliers.view');
+Route::get('/loanappliers/view/{appliers_id}',[LoanApplyController::class,'viewLoanAppliers'])->name('loanappliers.view');
+Route::get('/loanappliers/delete{appliers_id}',[LoanApplyController::class,'deleteLoanAppliers'])->name('loanappliers.delete');
+Route::get('/loanappliers/edit{appliers_id}',[LoanApplyController::class,'editLoanAppliers'])->name('loanappliers.edit');
+Route::put('/loanappliers/update{appliers_id}',[LoanApplyController::class,'updateAppliers'])->name('loanappliers.update');
 Route::get('loanappliers/accept/{loanappliers_id}',[LoanApplyController::class,'loanAccept'])->name('loanappliers.accept');
 Route::get('loanappliers/reject/{loanappliers_id}',[LoanApplyController::class,'loanReject'])->name('loanappliers.reject');
 

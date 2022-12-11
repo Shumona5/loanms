@@ -66,5 +66,34 @@ class LoanApplyController extends Controller
 
     }
     
+     public function deleteLoanAppliers(int $appliers_id)
+     {
+         $loanappliers=Apply::find($appliers_id);
+         if($loanappliers)
+         {
+            $loanappliers->delete();
+            notify()->success('Loan Appliers Information Deleted Successfully');
+            return redirect()->back();
+         }else
+         {
+            notify()->error('Loan Information Not Found');
+            return redirect()->back();
+         }
+     }
+
+  public function editLoanAppliers(int $appliers_id)
+  {
+    $loanappliers=Apply::find($appliers_id);
+    return view('backend.pages.loan_apply.edit_loanapply',compact('loanappliers'));
+  }
+
+  public function updateAppliers(Request $request, $appliers_id)
+  {
+    $loanappliers=Apply::find($appliers_id);
+    $loanappliers->update([
+
+    ]);
+  }
+
 }
 

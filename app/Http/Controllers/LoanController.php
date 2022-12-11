@@ -44,6 +44,7 @@ class LoanController extends Controller
         'type_id'=>$request->loan_type_id,
         'bank_id'=>auth()->user()->id,       
         'loan_amount'=>$request->loan_amount,
+        'interest'=>$request->interest,
         'image'=>$filename,
         'number_of_months'=>$request->number_of_months
 
