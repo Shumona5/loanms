@@ -9,11 +9,11 @@ use Illuminate\Http\Request;
 class LoanController extends Controller
 {
     public function loan()
-    {
+    {                                       
         
       // $loan_list=Loan::all();
       // dd($loan_list);
-      $loan_list=Loan::with(['loantype','bank'])->paginate(3);
+      $loan_list=Loan::with(['loantype','bank'])->where('bank_id','=',auth()->user()->id)->paginate(10);           
 
        return view('backend.pages.loans.loan',compact('loan_list'));
     }
@@ -41,7 +41,7 @@ class LoanController extends Controller
         'title'=>$request->loan_title,
         'status'=>$request->status,
         'details'=>$request->details,
-        'type_id'=>$request->loan_type_id,
+        'type_id'=>$request->loan_type_id,    
         'bank_id'=>auth()->user()->id,       
         'loan_amount'=>$request->loan_amount,
         'interest'=>$request->interest,
@@ -49,7 +49,8 @@ class LoanController extends Controller
         'number_of_months'=>$request->number_of_months
 
       ]);
-
+      
+      notify()->success('Loan Created Successfully');
       return redirect()->back();
     }
 
@@ -103,7 +104,7 @@ class LoanController extends Controller
           'loan_amount'=>$request->loan_amount,
           'image'=>$filename
         ]);
-         notify()->success(' Loan Update Successfully'); 
+         notify()->success(' Loan Update Successfully');      
         return redirect()->route('loan');
 }            
 }

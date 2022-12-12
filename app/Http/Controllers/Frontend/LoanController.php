@@ -14,10 +14,11 @@ class LoanController extends Controller
         //  dd($request->all());                                         
         //  if($request->amount )
 
-     $loans=Loan::where('type_id',$request->type_id)->get();      
+     $loans=Loan::with(['loantype','bank'])->where('type_id',$request->type_id)->get();   
+      
         return view('frontend.pages.featured_loan',compact('loans'));         
     }
-                   
+                    
 
     public function findloan()
     {

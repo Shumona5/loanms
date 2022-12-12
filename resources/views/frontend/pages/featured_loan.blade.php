@@ -24,24 +24,24 @@
                             <a href="job_details.html"><img src="assets/img/icon/job-list1.png" alt=""></a>
                         </div>
                         <div class="job-tittle">
-                            <a href="job_details.html"><h4> {{$loan->title}}</h4></a>
+                            <a href="job_details.html"><h4>Loan Title: {{$loan->title}}</h4></a>
                             <ul>
-                                <li> bank </li>
-                                <li><i class="fas fa-map-marker-alt"></i>{{$loan->type_id}}</li>
-                                <li>{{$loan->loan_amount}} BDT </li>
+                                <li> Bank Name: {{$loan->bank->name}} </li>
+                                <li><i class="fas fa-map-marker-alt"></i> Loan Type: {{$loan->loantype->name}} </li>
+                                <li> Loan Amount: {{$loan->loan_amount}} BDT </li>
                             </ul>
                         </div>
                     </div>
                     <div class="items-link f-right">
                         <a href="{{route('user.viewnow', $loan->id)}}"> View Now </a>
-                        <span>{{$loan->number_of_months}} months </span>       
+                        <span> Duration: {{$loan->number_of_months}} months </span>       
                     </div>
                 </div>
 
                 @endforeach
-
-                
-                
+                                            
+               
+              
                 
             </div>
         </div>
