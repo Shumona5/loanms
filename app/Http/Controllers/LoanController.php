@@ -91,9 +91,17 @@ class LoanController extends Controller
     {                                                             
           // dd($request->all()); 
           $loan=Loan::find($loan_id);
+
+          $filename=$loan->image;
+          if($request->hasFile('image'))
+          {
+            $filename=date('Ymdhsi').'.'.$request->file('image')->getClientOriginalExtension();
+            $request->file('image')->storeAs('/uploads',$filename);
+          }
           $loan->update([
           'title'=>$request->loan_title,
-          'loan_amount'=>$request->loan_amount
+          'loan_amount'=>$request->loan_amount,
+          'image'=>$filename
         ]);
          notify()->success(' Loan Update Successfully'); 
         return redirect()->route('loan');

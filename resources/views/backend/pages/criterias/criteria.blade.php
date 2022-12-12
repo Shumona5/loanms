@@ -24,7 +24,7 @@
         <th scope="row">{{$key+1}}</th>
         <td>{{$data->title}}</td>
         <td>{{$data->description}}</td>
-        <td>{{$data->type_id}}</td>
+        <td>{{$data->loan_type_relation->name}}</td>
         <td>{{$data->status}}</td>
         <td>
           <a href="{{route('criteria.view',$data->id)}}"class="btn btn-success"> View </a>

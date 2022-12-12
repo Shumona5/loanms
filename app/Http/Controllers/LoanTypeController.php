@@ -68,7 +68,8 @@ public function deleteloantype(string $loantype_id)
 
 public function viewloantype($loantype_id)
 {
-    return view('backend.pages.loan_types.view_loantype');
+    $loantypes=LoanType::find($loantype_id);
+    return view('backend.pages.loan_types.view_loantype',compact('loantypes'));
 }
 
 }
