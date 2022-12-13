@@ -60,6 +60,7 @@
                     </thead>
                     <tbody>
                       @foreach ($userApplications as $application)
+                      
                          <tr>
                           <th scope="row">1</th>
                           <td>{{$application->loan_id}}</td>
@@ -67,7 +68,10 @@
                           <td>{{$application->name}}</</td>
                           <td>{{$application->status}}</</td>
                           <td>
+                            {{-- cancel button show only for pending application  --}}
+                        @if($application->status == 'Pending')
                           <a href="{{route('user.cancel',$application->id)}}"class="btn btn-primary"> Cancel </a>
+                        @endif
                           <a href="{{route('profile.edit',$application->id)}}"class="btn btn-success"> Edit </a>
                           </td>
                         </tr>
