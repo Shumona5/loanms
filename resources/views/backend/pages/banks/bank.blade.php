@@ -3,7 +3,7 @@
 
 @section('Content')
 
-<h1>  Bank's List </h1>
+<h1 style="font-size: revert !important;">  Bank's List </h1>
 
 @if(session()->has('message'))
 <p class="alert alert-success">{{session()->get('message')}}</p>
@@ -32,7 +32,7 @@
     <tbody>
 
 @foreach ($bank_list as $key=>$data)
-    
+
 <tr>
   <th scope="row"> {{$key+1}} </th>
   <td>{{$data->name}}</td>

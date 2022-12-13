@@ -3,7 +3,7 @@
 
 @section('Content')
 
-<h1> <b> Criteria</b> </h1>
+<h1  style="font-size: revert !important;"> Criteria </h1>
 
 <a href="{{route('criteria.create')}}" class="btn btn-primary"> Create New Criteria </a>
 <table class="table">
@@ -31,10 +31,10 @@
           <a href="{{route('criteria.delete',$data->id)}}"class="btn btn-danger"> Delete </a>
           <a href=""class="btn btn-primary"> Edit </a>
         </td>
-      </tr> 
+      </tr>
       @endforeach
-      
-      
+
+
     </tbody>
   </table>
 

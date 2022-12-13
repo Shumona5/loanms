@@ -3,7 +3,7 @@
 
 @section('Content')
 
-<h1>  Loan </h1>
+<h1  style="font-size: revert !important;">  Loan </h1>
 <a href="{{route('loan.create')}}" class="btn btn-primary"> Create New Loan </a>
 <table class="table">
     <thead>
@@ -24,26 +24,26 @@
     <tbody>
       @foreach ($loan_list as $key=>$data )
       <tr>
-        <th scope="row">{{$key+1}}</th>       
+        <th scope="row">{{$key+1}}</th>
         <td>{{$data->title}}</td>
         <td>{{$data->details}}</td>
-        <td>{{$data->loantype->name}}</td>               
+        <td>{{$data->loantype->name}}</td>
         <td>{{$data->bank->name}}</td>
-        <td>{{$data->loan_amount}}</td>                     
+        <td>{{$data->loan_amount}}</td>
         <td>{{$data->number_of_months}}</td>
         <td>{{$data->interest}}</td>
         <td>{{$data->status}}</td>
         <td><img  width="100px" src="{{url('/uploads/'.$data->image)}}" alt=""></td>
-        
+
         <td>
           <a href="{{route('loan.view',$data->id)}}"class="btn btn-success"> View </a>
           <a href="{{route('loan.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
           <a href="{{route('loan.edit',$data->id)}}" class="btn btn-primary"> Edit </a>
         </td>
-      </tr> 
-      @endforeach      
-      
-      
+      </tr>
+      @endforeach
+
+
     </tbody>
   </table>
 

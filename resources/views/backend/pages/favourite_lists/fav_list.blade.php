@@ -3,7 +3,7 @@
 
 @section('Content')
 
-<h1> Favourite List </h1>
+<h1  style="font-size: revert !important;"> Favourite List </h1>
 
 <a href="{{route('fav.create')}}" class="btn btn-primary"> Create New Favourite  </a>
 
@@ -24,8 +24,8 @@
             <th scope="row">1</th>
             <td>{{$favlist->loan_seekers_name}}</td>
             <td>{{$favlist->loan_id}}</td>
-            
-        </tr>  
+
+        </tr>
         @endforeach
     </tbody>
   </table>
@@ -33,4 +33,4 @@
 {{$fav->links()}}
 
 
-  @endsection 
+  @endsection
