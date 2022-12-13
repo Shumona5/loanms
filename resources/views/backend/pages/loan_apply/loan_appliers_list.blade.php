@@ -2,7 +2,7 @@
 
 @section('Content')
 
-<h1> <b> Loan Appliers Information </b> </h1>
+<h1  style="font-size: revert !important;"> <b> All loan applications </b> </h1>
 <br>
 <table class="table">
     <thead>
@@ -30,9 +30,9 @@
                 <a href="{{route('loanappliers.edit',$apply->id)}}" class="btn btn-primary"> Edit </a>
                 <a href="{{route('loanappliers.delete',$apply->id)}}" class="btn btn-danger"> Delete </a>
             </td>
-          </tr>  
+          </tr>
         @endforeach
-      
+
    </tbody>
   </table>
 

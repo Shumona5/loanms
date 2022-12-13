@@ -3,7 +3,7 @@
 @section('Content')
 
 
-<h1> Loan Seeker's List </h1>
+<h1  style="font-size: revert !important;"> Loan Seeker's List </h1>
 
 <table class="table">
     <thead>
@@ -33,13 +33,13 @@
           <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
           <a href="{{route('user.edit',$data->id)}}" class="btn btn-primary"> Edit </a>
         </td>
-      </tr>  
+      </tr>
       @endforeach
-      
-      
+
+
     </tbody>
   </table>
 {{$user_list->links()}}
 
-    
+
 @endsection

@@ -1,14 +1,14 @@
 @extends('backend.master')
 @section('Content')
-    
+
 
 <div class="container-fluid px-4">
-    <h1 class="mt-4">Dashboard</h1>
-    
+    <h1 class="mt-4"  style="font-size: revert !important;">Dashboard</h1>
+
     <div class="row">
         <div class="col-xl-3 col-md-6">
             <div class="card bg-primary text-white mb-4">
-                <div class="card-body"> Total Loan  
+                <div class="card-body"> Total Loan
                       12
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-xl-3 col-md-6">
             <div class="card bg-warning text-white mb-4">
-                <div class="card-body"> Loan Types 
+                <div class="card-body"> Loan Types
                           8
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
@@ -47,8 +47,8 @@
             </div>
         </div>
     </div>
-   
-   
+
+
 </div>
 
 @endsection

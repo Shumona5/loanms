@@ -2,8 +2,8 @@
 
 
 @section('Content')
-    
-<h1> Loan Types </h1>
+
+<h1  style="font-size: revert !important;"> Loan Types </h1>
 
 <a href="{{route('loan.type.create')}}" class="btn btn-primary"> Create New Loan Types </a>
 
@@ -30,12 +30,12 @@
               <a href="{{route('loantype.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
               <a href="" class="btn btn-primary"> Edit </a>
             </td>
-          </tr> 
+          </tr>
           @endforeach
         </tr>
         </tbody>
       </table>
-      
+
 </table>
 
 {{$loantypes_list->links()}}
