@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FavouriteList;
+use App\Models\WishList;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
@@ -13,7 +14,7 @@ class FavouriteListController extends Controller
         
         // $fav=FavouriteList::all();
         // dd($fav);
-        $fav=FavouriteList::paginate(6);
+        $fav=WishList::paginate(6);
         
         return view('backend.pages.favourite_lists.fav_list',compact('fav'));
     }

@@ -40,6 +40,7 @@ Route::get('/applynow/{loan_id}',[FrontendLoanController::class,'applyNow'])->na
 
 
 
+
 Route::group(["middleware"=>'auth'],function(){
    
     Route::get('/logout',[WebHomeController::class,'logout'])->name('user.logout');
@@ -48,7 +49,7 @@ Route::group(["middleware"=>'auth'],function(){
     Route::get('profile/edit/{profile_id}',[WebHomeController::class,'edit'])->name('profile.edit');
     Route::get('profile/update/{profile_id}',[WebHomeController::class,'update'])->name('profile.update');
     Route::post('/applynowform/{loan_id}',[FrontendLoanController::class,'applyNowForm'])->name('user.applyform');
-
+    Route::get('/add-to-wish-list/{loan_id}',[FrontendLoanController::class,'addWishList'])->name('add.to.wish.list');
 
 
 });

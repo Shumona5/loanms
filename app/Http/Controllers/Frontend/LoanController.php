@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Apply;
 use App\Models\Loan;
+use App\Models\WishList;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -67,4 +68,18 @@ class LoanController extends Controller
            return redirect()->back();
     }
    
+public function addWishList(int $loan_id)
+{
+        //    dd($loan_id);
+        WishList::create([
+
+         'loan_seekers_id'=>auth()->user()->id,
+         'loan_id'=>$loan_id
+        ]); 
+
+       notify()->success('Loan Added to Your Wish List ');
+        return redirect()->back();
+}         
+
+
 }

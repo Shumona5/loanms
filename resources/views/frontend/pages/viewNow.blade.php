@@ -33,8 +33,9 @@
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">
                                 <i class="bi-cart-fill me-1"></i>
                                 
-                                <a href="{{route('user.applynow',$loan->id)}}"> Apply Now..... </a>    
+                                <a href="{{route('user.applynow',$loan->id)}}"> Apply Now </a>    
                             </button>
+                            <a href="{{route('add.to.wish.list',$loan->id)}}" class="btn btn-primary" style="margin-left: 10px"  > Add To Wish List </a>
                         </div>
                     </div>
                 </div>                                   
