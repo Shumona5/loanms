@@ -116,6 +116,7 @@ Route::get('criteria/view/{criteria_id}',[CriteriaController::class,'view'])->na
 
 Route::get('/loancriteria',[loanCriteriaController::class,'list'])->name('loancriteria');
 Route::get('/report',[ReportController::class,'reports'])->name('report');
+Route::get('/report/generate',[ReportController::class,'reportGenerate'])->name('report.generate');
 
 Route::get('/fav',[FavouriteListController::class,'list'])->name('fav');
 Route::get('/favs-create',[FavouriteListController::class,'formcreate'])->name('fav.create');
