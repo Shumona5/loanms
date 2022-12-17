@@ -5,9 +5,6 @@
 
 <h1  style="font-size: revert !important;"> Wish List </h1>
 
-
-
-
 <table class="table">
     <thead>
       <tr>

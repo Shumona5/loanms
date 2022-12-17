@@ -61,4 +61,9 @@ class CriteriaController extends Controller
          $criteria=Criteria::find($criteria_id); 
         return view('backend.pages.criterias.view_criteria',compact('criteria'));
     }
+
+    public function edit()
+    {
+        
+    }
 }

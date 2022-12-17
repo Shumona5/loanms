@@ -6,6 +6,7 @@ use App\Models\Apply;
 use App\Models\Loan;
 use App\Models\LoanType;
 use App\Models\User;
+use App\Models\WishList;
 use Illuminate\Http\Request;
 
 class WebHomeController extends Controller
@@ -77,8 +78,11 @@ class WebHomeController extends Controller
     //    I want to get all applications of this user. 
         $userApplications=Apply::where('user_id',auth()->user()->id)->get();
         // dd($userApplications);
-        
-        return view('frontend.pages.profile',compact('userApplications'));
+        $favouritelist=WishList::with(['seekerRelation','loanRelation'])->where('loan_seekers_id',auth()->user()->id)->get();
+            // dd($favouritelist);
+
+
+        return view('frontend.pages.profile',compact('userApplications','favouritelist'));
     }
 
 

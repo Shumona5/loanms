@@ -13,10 +13,10 @@ class FavouriteListController extends Controller
     {
         
         // $fav=FavouriteList::all();
-        // dd($fav);
+        
         $fav=WishList::paginate(6);
         
-        return view('backend.pages.favourite_lists.fav_list',compact('fav'));
+        return view('backend.pages.Wish_lists.fav_list',compact('fav'));
     }
 
      public function formcreate()

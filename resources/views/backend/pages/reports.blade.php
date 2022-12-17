@@ -50,7 +50,7 @@
             <td>{{$data->user_id}}</td>
             <td>{{$data->name}}</td>
             <td>{{$data->email}}</td>
-            <td>Otto</td>
+            <td>{{$data->status}}</td>
         </tr>
         @endforeach
         @endif

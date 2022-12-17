@@ -79,7 +79,33 @@
                                                    
                      
                     </tbody>
-                  </table>               
+                  </table>  
+                  <br>
+                     
+                  <b> <h1 style="color:purple"> Wish List </h1> </b>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID </th>
+                        <th scope="col">Loan Seeker's Name</th>
+                        <th scope="col">Loan ID </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($favouritelist as $data )
+                        
+                    <tr>
+                            <th scope="row">1</th>
+                            <td>{{$data->seekerRelation->name}}</td>
+                            <td>{{$data->loanRelation->title}}</td>
+                            <td>
+                              <a href="" class="btn btn-danger">Delete</a>
+                            </td>
+                
+                    </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
 
             </div>
         </div>
