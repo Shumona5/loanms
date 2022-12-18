@@ -1,20 +1,16 @@
 @extends('backend.master')
 
 @section('Content')
-
-<h1 style="font-size: revert !important">Create New Criteria</h1>
-<br>
-
-<form action="{{route('criteria.store')}}" method="POST">
-
+<form action="{{route('criteria.update',$criterias->id)}}" method="POST">
+@method('put') 
     
     @csrf
     <div class="form-control">
         <label for=""> Select Loan Type: </label>
     
        <select name="loan_type_id" id="" class="form-control" > 
-       @foreach ($loantype as $data)
-           <option value="{{$data->id}}"> {{$data->name}}</option>
+       @foreach ($loantypes as $data)
+           <option value="{{$data->id}}"> {{$data->name}} </option>
        @endforeach
 
        </select>
@@ -22,12 +18,12 @@
     
     <div>
         <label for=""> Enter Criteria Name: </label>
-    <input type="text" class="form-control"  name="criteria_name" >
+    <input type="text" class="form-control"  name="criteria_name" value="{{$criterias->title}}">
     </div>
 
     <div>
         <label for=""> Description </label>
-    <input type="text" class="form-control" name="description">
+    <input type="text" class="form-control" name="description"  value="{{$criterias->description}}">
     </div>
     
     <div class="form-group">
@@ -37,7 +33,7 @@
            <option value="inactive"> Inactive </option>   
            </select>
     </div>
-    <button type="submit" class="btn btn-primary"> Submit </button>
+    <button type="submit" class="btn btn-primary"> Update </button>
     
 </form>
 

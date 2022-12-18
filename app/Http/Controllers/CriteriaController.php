@@ -62,8 +62,28 @@ class CriteriaController extends Controller
         return view('backend.pages.criterias.view_criteria',compact('criteria'));
     }
 
-    public function edit()
+    public function edit(int $criteria_id)
     {
+        $criterias=Criteria::find($criteria_id);
+
+        $loantypes=LoanType::all();
+
+        return view('backend.pages.criterias.edit_criteria',compact('criterias','loantypes'));
+    }
+
+    public function update(Request $request, $criteria_id)
+    {
+          $criterias=Criteria::find($criteria_id);
+
+          $criterias->update([
+
+            'title'=>$request->criteria_name,
+            'description'=>$request->description,
+            'type_id'=>$request->loan_type_id,
+            'status'=>$request->status
+          ]);
         
+          notify()->success('Criteria Updated Successfully');
+          return redirect()->back();
     }
 }

@@ -9,4 +9,10 @@ class LoanType extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+
+    public function criteriaRel()
+    {
+        return $this->hasMany(criteria::class,'type_id','id');
+    }
 }

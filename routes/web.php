@@ -115,6 +115,7 @@ Route::post('criteria/store',[CriteriaController::class,'criteriaStore'])->name(
 Route::get('criteria/delete/{criteria_id}',[CriteriaController::class,'delete'])->name('criteria.delete');
 Route::get('criteria/view/{criteria_id}',[CriteriaController::class,'view'])->name('criteria.view');
 Route::get('criteria/edit/{criteria_id}',[CriteriaController::class,'edit'])->name('criteria.edit');
+Route::put('criteria/update/{criteria_id}',[CriteriaController::class,'update'])->name('criteria.update');
 
 Route::get('/loancriteria',[loanCriteriaController::class,'list'])->name('loancriteria');
 Route::get('/report',[ReportController::class,'reports'])->name('report');

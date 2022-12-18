@@ -18,6 +18,8 @@
                     <div class="col-md-6">
                         
                         <h1 class="display-5 fw-bolder"> Title: {{$loan->title}}</h1>  <!--$variable name->db table name-->
+                        <h1 class="display-5 fw-bolder"> Type: {{$loan->loantype->name}}</h1>  <!--$variable name->db table name-->
+                       
                         <div class="fs-5 mb-5">
                             <span class="text-decoration-line-through"> Loan Amount: {{$loan->loan_amount}} BDT </span> 
                             <p>Interest Rate : {{$loan->interest}}  % </p>
@@ -28,6 +30,16 @@
                         </div>  
                         <p class="lead"> Loan Details: {{$loan->details}} </p>
                         <br> 
+
+                        <h2 class="lead"> Loan Criterias: </h2>
+                        @foreach ($criterias as $key=>$data)
+                        <p>{{$key+1}}. {{$data->title}}</p>
+                        @endforeach
+                      
+                       
+                        <br> 
+
+
                         <div class="d-flex">
                           
                             <button class="btn btn-outline-dark flex-shrink-0" type="button">

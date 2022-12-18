@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Apply;
+use App\Models\criteria;
 use App\Models\Loan;
 use App\Models\WishList;
 use Illuminate\Http\Request;
@@ -31,10 +32,13 @@ class LoanController extends Controller
     public function view($loan_id)
     {
         // dd($loan_id);
-        $loan=Loan::find($loan_id); 
-       
+        //    dd($loan);
+        // $loan=Loan::with(['loantype','loantype.criteriaRel'])->find($loan_id); 
+        $loan=Loan::with('loantype')->find($loan_id); 
+
+        $criterias=criteria::where('type_id',$loan->type_id)->get();
         
-        return view('frontend.pages.viewNow',compact('loan'));
+        return view('frontend.pages.viewNow',compact('loan','criterias'));
     }
 
     public function applyNow(int $loan_id)  
