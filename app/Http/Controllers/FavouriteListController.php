@@ -14,8 +14,8 @@ class FavouriteListController extends Controller
         
         // $fav=FavouriteList::all();
         
-        $fav=WishList::paginate(6);
-        
+        $fav=WishList::with(['seekerRelation','loanRelation'])->paginate(6);
+        // dd($fav);
         return view('backend.pages.Wish_lists.fav_list',compact('fav'));
     }
 

@@ -64,7 +64,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"> Registration </h5>
+          <h5 class="modal-title" id="exampleModalLabel"> Registration  </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -75,19 +75,19 @@
                 
                 <div class="form-group">
                     <label for="user_name"> User Name </label>
-                    <input type="text" class="form-control" id="user_name" name="user_name"    placeholder="Enter Your Name">
+                    <input  required type="text" class="form-control" id="user_name" name="user_name"    placeholder="Enter Your Name">
                   </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="user_email"  placeholder="Enter email">
+                  <input required  type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  name="user_email"  placeholder="Enter email">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1"   name="password" placeholder="Password">
+                  <input required  type="password" class="form-control" id="exampleInputPassword1"   name="password" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="contact"> Contact </label>
-                    <input type="text" class="form-control" id="contact"  name="contact"   placeholder="Enter Your Phone Number">
+                    <input required  type="text" class="form-control" id="contact"  name="contact"   placeholder="Enter Your Phone Number">
                 </div>
                 <div class="form-group">
                     <label for="contact"> About </label>

@@ -33,7 +33,7 @@ public function bankstore(Request $request)
 //  dd($request->all());
    
    $request-> validate([
-      'bank_name'=>'required|unique:users,name',
+      'bank_name'=>'required',
      'bank_email'=>'required|unique:users,email'
   ]);
 

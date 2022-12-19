@@ -127,3 +127,4 @@ Route::post('/fav.store',[FavouriteListController::class,'favStore'])->name('fav
 
 });
 });
+

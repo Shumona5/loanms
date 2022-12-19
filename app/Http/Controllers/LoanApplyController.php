@@ -12,7 +12,7 @@ class LoanApplyController extends Controller
 
     public function list()
     {                                     
-        $apply_list=Apply::all();
+        $apply_list=Apply::orderBy('id','DESC')->get();
         return view('backend.pages.loan_apply.loan_appliers_list',compact('apply_list'));
     }
 
