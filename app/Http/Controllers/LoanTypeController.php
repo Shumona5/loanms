@@ -46,7 +46,7 @@ public function loantypelist(Request $request)
         'image'=>$fileName,
         'status'=>$request->status
     ]);
-
+    notify()->success('Loan Type Created Successfully');
     return redirect()-> back();
 }
 

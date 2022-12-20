@@ -20,7 +20,7 @@ class Loan extends Model
    {
       return $this-> belongsTo(User::class,'bank_id','id');
    }
-
+ 
 
 }
 

@@ -76,15 +76,15 @@ class WebHomeController extends Controller
     {
        
     //    I want to get all applications of this user. 
-        $userApplications=Apply::where('user_id',auth()->user()->id)->get();
-        // dd($userApplications);
+        $userApplications=Apply::with('loanRelation')->where('user_id',auth()->user()->id)->get();
+        //  dd($userApplications);
         $favouritelist=WishList::with(['seekerRelation','loanRelation'])->where('loan_seekers_id',auth()->user()->id)->get();
             // dd($favouritelist);
 
 
         return view('frontend.pages.profile',compact('userApplications','favouritelist'));
     }
-
+      
 
     public function cancel(int $profile_id)
     {

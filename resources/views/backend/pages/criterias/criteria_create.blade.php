@@ -22,7 +22,7 @@
     
     <div>
         <label for=""> Enter Criteria Name: </label>
-    <input type="text" class="form-control"  name="criteria_name" >
+    <input required type="text" class="form-control"  name="criteria_name" >
     </div>
 
     <div>

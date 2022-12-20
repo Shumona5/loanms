@@ -15,7 +15,7 @@
 
     <div>
         <label for="loan_name"> Loan Type Name: </label>
-        <input type="text" class="form-control" id="loan_name"  name="loan_name" placeholder="Enter Loan Title"> 
+        <input  required  type="text" class="form-control" id="loan_name"  name="loan_name" placeholder="Enter Loan Title"> 
         
      </div>
         <div>

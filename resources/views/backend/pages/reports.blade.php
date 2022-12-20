@@ -41,11 +41,11 @@
         @if (isset($appliers))
             
         
-       @foreach ( $appliers as $data)
+       @foreach ( $appliers as $key=> $data)
            
       
         <tr>
-            <th scope="row">1</th>
+            <th scope="row">{{$key+1}}</th>
             <td>{{$data->loan_id}}</td>
             <td>{{$data->user_id}}</td>
             <td>{{$data->name}}</td>

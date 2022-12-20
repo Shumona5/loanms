@@ -9,6 +9,13 @@ class Apply extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    public function loanRelation()
+    {
+        return $this->belongsTo(Loan::class,'loan_id','id');
+    }
 }
+
+
 
 

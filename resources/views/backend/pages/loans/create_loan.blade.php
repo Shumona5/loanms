@@ -17,7 +17,7 @@
      
     <div>
         <label for="loan_amount"> Loan Amount:  </label>
-        <input type="number" class="form-control" id="loan_amount"  name="loan_amount" > 
+        <input required type="number" class="form-control" id="loan_amount"  name="loan_amount" > 
     </div>
     
     

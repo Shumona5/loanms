@@ -87,7 +87,7 @@
                 </div>
                 <div class="form-group">
                     <label for="contact"> Contact </label>
-                    <input required  type="text" class="form-control" id="contact"  name="contact"   placeholder="Enter Your Phone Number">
+                    <input required  type="number" class="form-control" id="contact"  name="contact"   placeholder="Enter Your Phone Number">
                 </div>
                 <div class="form-group">
                     <label for="contact"> About </label>
