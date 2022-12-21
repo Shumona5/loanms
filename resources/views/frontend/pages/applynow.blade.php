@@ -12,7 +12,7 @@
               
               <div class="form-group">
                     <label for=""> Name: </label>
-                    <input type="text" class="form-control" id=""  name="name"   placeholder="Enter name">
+                    <input type="text" class="form-control" id=""  name="name" value="{{auth()->user()->name}}"  placeholder="Enter name">
                 </div>
             
                  <div class="form-group">
@@ -31,17 +31,17 @@
             
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"  placeholder="Enter email">
-                </div>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{auth()->user()->email}}" placeholder="Enter email">
+                </div>      
                 
                 <div class="form-group">
                   <label for=""> Phone Number </label>
-                  <input type="number" class="form-control" id="" name="phone_number" >
+                  <input type="number" class="form-control" id="" name="phone_number" value="{{auth()->user()->contact}}">
                 </div>
 
                 <div class="form-group">
                   <label for=""> Address: </label>
-                  <input type="text" class="form-control" id="" name="address" >
+                  <input type="text" class="form-control" id="" name="address" value="{{auth()->user()->address}}">
                 </div>
 
                 <div class="form-group">

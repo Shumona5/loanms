@@ -54,16 +54,22 @@
 </p>
 <p>
     <div class="row">
-        <div class="col-md-3">  
+        @if ($apply_list->status=='pending')
+        
+          <div class="col-md-3">  
           <a href="{{route('loanappliers.accept',$apply_list->id)}}" class="btn btn-success"> Accept </a> 
         </div>
         <div class="col-md-6"> 
             <a href="{{route('loanappliers.reject',$apply_list->id)}}" class="btn btn-danger"> Reject </a> 
         </div>
+        @endif
+
         <div class="col-md-3">
-            <button type="submit"  class="btn btn-primary"> Print </button>
+            <button type="submit"  class="btn btn-primary"> Print </button> 
         </div>
     </div>
 </p>
 
 @endsection
+
+

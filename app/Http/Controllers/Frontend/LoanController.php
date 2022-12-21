@@ -56,9 +56,11 @@ class LoanController extends Controller
     public function applyNowForm(Request $request, $loan_id)
     {
        $validation=Validator::make($request->all(),[
-        'birth_date'=>'required|before:-20 years'
-       ]);
-        
+        'birth_date'=>'required|before:-20 years',
+        'phone_number'=>'required|digits:11'
+       ]);                           
+                                    
+                                                     
        if($validation->fails())
        {
         notify()->error($validation->getMessageBag());
@@ -70,7 +72,7 @@ class LoanController extends Controller
             'user_id'=>auth()->user()->id,
             'name'=>$request->name,                                      
             'birth_date'=>$request->birth_date,
-            'marital_status'=>$request->marital_status,
+            'marital_status'=>$request->marital_status,           
             'email'=>$request->email,
             'phone_number'=>$request->phone_number,
             'address'=>$request->address,
