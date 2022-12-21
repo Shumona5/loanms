@@ -36,8 +36,6 @@ Route::post('login',[WebHomeController::class,'login'])->name('user.login');
 Route::get('/searchloan',[FrontendLoanController::class,'list'])->name('user.searchloan');
 Route::get('/viewnow/{loan_id}',[FrontendLoanController::class,'view'])->name('user.viewnow');
 Route::get('/findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
-Route::get('/applynow/{loan_id}',[FrontendLoanController::class,'applyNow'])->name('user.applynow');
-
 
 
 
@@ -50,7 +48,7 @@ Route::group(["middleware"=>'auth'],function(){
     Route::get('profile/update/{profile_id}',[WebHomeController::class,'update'])->name('profile.update');
     Route::post('/applynowform/{loan_id}',[FrontendLoanController::class,'applyNowForm'])->name('user.applyform');
     Route::get('/add-to-wish-list/{loan_id}',[FrontendLoanController::class,'addWishList'])->name('add.to.wish.list');
-
+    Route::get('/applynow/{loan_id}',[FrontendLoanController::class,'applyNow'])->name('user.applynow');
 
 });
 

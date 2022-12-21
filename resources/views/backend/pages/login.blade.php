@@ -14,7 +14,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-6 text-center mb-5">
-<h2 class="heading-section">Loan Management System </h2>
+<h2 class="heading-section"> Loan Management System </h2>
 </div>
 </div>
 <div class="row justify-content-center">
@@ -46,7 +46,7 @@
 <input type="password" class="form-control"  name="password"    placeholder="Password" required>
 </div>
 <div class="form-group">
-<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+<button type="submit" class="form-control btn btn-primary rounded submit px-3">LOG IN</button>
 </div>
 
 </form>

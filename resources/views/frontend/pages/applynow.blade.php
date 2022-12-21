@@ -43,6 +43,11 @@
                   <label for=""> Address: </label>
                   <input type="text" class="form-control" id="" name="address" >
                 </div>
+
+                <div class="form-group">
+                  <label for=""> Relation With Applicant: </label>
+                  <input type="text" class="form-control" id="" name="relation_with_applicant" >
+                </div>
           
                 <div class="form-group">
                 <p> How long have you lived in your given address? </p>

@@ -8,6 +8,8 @@ use App\Models\criteria;
 use App\Models\Loan;
 use App\Models\WishList;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Stmt\Return_;
 
 class LoanController extends Controller
 {                                                        
@@ -41,16 +43,27 @@ class LoanController extends Controller
         return view('frontend.pages.viewNow',compact('loan','criterias'));
     }
 
-    public function applyNow(int $loan_id)  
-    {
-        // dd("dsfasfs");
+    public function applyNow(int $loan_id) {
+        $apply=Apply::where('loan_id',$loan_id)->where('user_id',auth()->user()->id)->first();
+        if($apply){
+            notify()->error('You Already Applied To This Loan');
+            return redirect()->route('user.findloan');
+        }
         return view('frontend.pages.applynow',compact('loan_id'));
     }
 
+     
     public function applyNowForm(Request $request, $loan_id)
     {
-        //  dd($loan_id); 
+       $validation=Validator::make($request->all(),[
+        'birth_date'=>'required|before:-20 years'
+       ]);
         
+       if($validation->fails())
+       {
+        notify()->error($validation->getMessageBag());
+        return redirect()->back();
+       }
         
         Apply::create([
             'loan_id'=>$loan_id,
@@ -61,6 +74,7 @@ class LoanController extends Controller
             'email'=>$request->email,
             'phone_number'=>$request->phone_number,
             'address'=>$request->address,
+            'relation_with_applicant'=>$request->relation_with_applicant,
             'living_duration'=>$request->living_duration,
             'company_name'=>$request->company,
             'designation'=>$request->designation,
