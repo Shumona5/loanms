@@ -2,6 +2,8 @@
 
 @section('Content')
 
+<div id="loan_application">
+
 <h1> <b> Loan Appliers Information </b> </h1>
 <br>
 <p>
@@ -52,6 +54,9 @@
 <p>
     <label for=""> Status: {{$apply_list->status}} </label>
 </p>
+
+</div>
+
 <p>
     <div class="row">
         @if ($apply_list->status=='pending')
@@ -65,11 +70,21 @@
         @endif
 
         <div class="col-md-3">
-            <button type="submit"  class="btn btn-primary"> Print </button> 
+            <button onclick="printDiv('loan_application')"  class="btn btn-success">  Print </button> 
+
+            
         </div>
-    </div>
+    </div>  
 </p>
 
+<script>
+    function printDiv(divId){
+        var printContents = document.getElementById(divId).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection
-
 
