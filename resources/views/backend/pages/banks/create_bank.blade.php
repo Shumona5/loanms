@@ -27,7 +27,7 @@
     
     <div>
         <label for="email"> Bank's Email:  </label>
-        <input type="email" class="form-control" id="email"  name="bank_email" placeholder="Enter Email"> 
+        <input required type="email" class="form-control" id="email"  name="bank_email" placeholder="Enter Email"> 
     </div>
        
     <div>

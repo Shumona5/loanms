@@ -24,15 +24,15 @@
                         <div class="job-tittle">
                             <a href="job_details.html"><h4>{{$loan->title}}</h4></a>
                             <ul>
-                                <li>Creative Agency</li>
-                                <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li>
-                                <li> {{$loan->loan_amount}} BDT </li>
+                                {{-- <li>Creative Agency</li> --}}
+                                {{-- <li><i class="fas fa-map-marker-alt"></i>Athens, Greece</li> --}}
+                                <li> Loan Amount: {{$loan->loan_amount}} BDT </li>
                             </ul>
                         </div>
                     </div>                 
                     <div class="items-link f-right">     
                         <a href="{{route('user.viewnow', $loan->id)}}"> View Now </a>
-                        <span>{{$loan->number_of_months}} months </span>
+                        <span> Duration:{{$loan->number_of_months}} months </span>
                     </div>
                 </div>   
                 @endforeach          

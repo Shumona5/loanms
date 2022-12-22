@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number',20);
             $table->text('address');
-            $table->text('relation_with_applicant');
+            $table->text('relation_with_applicant')->nullable();
             $table->string('living_duration');
             $table->string('company_name');
             $table->string('designation',100);

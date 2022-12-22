@@ -6,7 +6,7 @@
 @csrf
     <div>
     <label for="loan_title"> Loan Title: </label>
-    <input type="text" class="form-control" id="loan_title"  name="loan_title" placeholder="Enter Loan Title"> 
+    <input  required type="text" class="form-control" id="loan_title"  name="loan_title" placeholder="Enter Loan Title"> 
     
     </div>
     
@@ -23,12 +23,12 @@
     
     <div>
         <label for="num_of_months"> Number Of month(s): </label>
-        <input type="number" class="form-control" id="num_of_months"  name="number_of_months" > 
+        <input required  type="number" class="form-control" id="num_of_months"  name="number_of_months" > 
     </div>
 
     <div>
         <label for="interest"> Interest: </label>
-        <input type="number" class="form-control" id="interest"  name="interest" > 
+        <input required  type="number" class="form-control" id="interest"  name="interest" > 
     </div>
 
     <div>

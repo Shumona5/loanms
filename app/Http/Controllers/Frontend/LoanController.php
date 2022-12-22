@@ -57,7 +57,8 @@ class LoanController extends Controller
     {
        $validation=Validator::make($request->all(),[
         'birth_date'=>'required|before:-20 years',
-        'phone_number'=>'required|digits:11'
+        'phone_number'=>'required|digits:11',
+        'experience'=>'required'
        ]);                           
                                     
                                                      

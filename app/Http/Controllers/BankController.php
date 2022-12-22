@@ -34,7 +34,8 @@ public function bankstore(Request $request)
    
    $request-> validate([
       'bank_name'=>'required',
-     'bank_email'=>'required|unique:users,email'
+     'bank_email'=>'required|unique:users,email',
+     'contact'=>'required|digits:11',
   ]);
 
    $fileName=null;
