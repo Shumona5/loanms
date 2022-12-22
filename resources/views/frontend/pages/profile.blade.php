@@ -95,10 +95,10 @@
                     </tr>
                     </thead>
                     <tbody>
-                      @foreach ($favouritelist as $data )
-                        
+                      @foreach ($favouritelist as $key=>$data )
+                                                                      
                     <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">{{$key+1}}</th>                 
                             <td>{{$data->seekerRelation->name}}</td>
                             <td>{{$data->loanRelation->title}}</td>
                             <td>

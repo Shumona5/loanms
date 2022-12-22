@@ -37,8 +37,7 @@ Route::get('/searchloan',[FrontendLoanController::class,'list'])->name('user.sea
 Route::get('/viewnow/{loan_id}',[FrontendLoanController::class,'view'])->name('user.viewnow');
 Route::get('/findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
 
-
-
+     
 Route::group(["middleware"=>'auth'],function(){
    
     Route::get('/logout',[WebHomeController::class,'logout'])->name('user.logout');

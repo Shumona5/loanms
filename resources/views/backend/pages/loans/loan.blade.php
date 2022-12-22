@@ -4,8 +4,14 @@
 @section('Content')
 
 <h1  style="font-size: revert !important;">  Loan </h1>
+
+@if (auth()->user()->role=='bank')
+    
+
 <a href="{{route('loan.create')}}" class="btn btn-primary"> Create New Loan </a>
-<table class="table">
+@endif
+
+<table class="table">   
     <thead>
       <tr>
         <th scope="col">ID</th>

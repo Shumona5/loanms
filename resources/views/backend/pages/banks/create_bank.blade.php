@@ -18,7 +18,7 @@
    @endif 
 
     @csrf
-    
+                                      
     <div>
     <label for="name"> Bank's Name:  </label>
     <input type="text" class="form-control" id="name"  name="bank_name" placeholder="Enter Bank's Name"> 

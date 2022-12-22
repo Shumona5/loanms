@@ -75,7 +75,7 @@ class LoanController extends Controller
             'birth_date'=>$request->birth_date,
             'marital_status'=>$request->marital_status,           
             'email'=>$request->email,
-            'phone_number'=>$request->phone_number,
+            'phone_number'=>$request->phone_number,                                                 
             'address'=>$request->address,
             'relation_with_applicant'=>$request->relation_with_applicant,
             'living_duration'=>$request->living_duration,
@@ -86,7 +86,7 @@ class LoanController extends Controller
 
            ]);
            notify()->success('Loan Applied Successfully');
-           return redirect()->back();
+         return redirect()->route('user.profile');
     }
    
 public function addWishList(int $loan_id)
@@ -104,3 +104,4 @@ public function addWishList(int $loan_id)
 
 
 }
+
