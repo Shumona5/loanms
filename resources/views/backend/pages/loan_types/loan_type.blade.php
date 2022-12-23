@@ -4,9 +4,10 @@
 @section('Content')
 
 <h1  style="font-size: revert !important;"> Loan Types </h1>
+<br>
 
 <a href="{{route('loan.type.create')}}" class="btn btn-primary"> Create New Loan Types </a>
-
+<br>
 <table>
     <table class="table">
         <thead>

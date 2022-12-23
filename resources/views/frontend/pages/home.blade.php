@@ -51,7 +51,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-tittle text-center">
-                    <span>FEATURED TOURS Packages</span>
+                    
                     <h2>Browse Top Loan Type </h2>
                 </div>
             </div>
@@ -93,9 +93,9 @@
         <div class="row justify-content-center">
             <div class="col-xl-10">
                 <div class="cv-caption text-center">
-                    <p class="pera1">FEATURED TOURS Packages</p>
-                    <p class="pera2"> Make a Difference with Your Online Resume!</p>
-                    <a href="#" class="border-btn2 border-btn4">Upload your cv</a>
+                    
+                    <p class="pera2"> “It’s easy to get a loan unless you need it.”</p>
+                    
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-tittle text-center">
-                    <span>Recent Loans </span>
+                    
                     <h2>Featured Loans </h2>
                 </div>
             </div>
@@ -168,8 +168,8 @@
                         <span class="flaticon-search"></span>
                     </div>
                     <div class="process-cap">
-                       <h5>1. Search a Loan Type </h5>
-                       <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                       <h5>1. Search a Loan  </h5>
+                       <p>We can help you find loans matched to your credit information.Searching takes less than 2 minutes and won't harm your score.</p>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,8 @@
                     </div>
                     <div class="process-cap">
                        <h5>2. Apply for Loan </h5>
-                       <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                       <p>Check the Eligibility Criteria.Check Interest Rates.Calculate your EMI.Check Required Documents.Fill Application Form Online.
+                          Wait for Loan Approval</p>
                     </div>
                 </div>
             </div>
@@ -191,7 +192,7 @@
                     </div>
                     <div class="process-cap">
                        <h5>3. Get your Loan </h5>
-                       <p>Sorem spsum dolor sit amsectetur adipisclit, seddo eiusmod tempor incididunt ut laborea.</p>
+                       <p>Gather your documents. Your lender will require documentation.Complete a preapproval application.Wait for you lender to process the preapproval.</p>
                     </div>
                 </div>
             </div>
@@ -202,7 +203,7 @@
 
 <!-- Support Company End-->
 <!-- Blog Area Start -->
-<div class="home-blog-area blog-h-padding">
+{{-- <div class="home-blog-area blog-h-padding">
     <div class="container">
         <!-- Section Tittle -->
         <div class="row">
@@ -254,7 +255,7 @@
             </div>
         </div>
     </div>
-</div>                                  
+</div>                                   --}}
 <!-- Blog Area End -->
 
 

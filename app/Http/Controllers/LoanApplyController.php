@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class LoanApplyController extends Controller
 {
-    
+                          
 
     public function list()
     {                                     

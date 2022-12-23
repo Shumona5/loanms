@@ -42,15 +42,18 @@ Route::group(["middleware"=>'auth'],function(){
    
     Route::get('/logout',[WebHomeController::class,'logout'])->name('user.logout');
     Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
-    Route::get('profile/cancel/{profile_id}',[WebHomeController::class,'cancel'])->name('user.cancel');
-    Route::get('profile/edit/{profile_id}',[WebHomeController::class,'edit'])->name('profile.edit');
-    Route::get('profile/update/{profile_id}',[WebHomeController::class,'update'])->name('profile.update');
+    Route::get('application/cancel/{id}',[WebHomeController::class,'cancel'])->name('user.cancel');
+    Route::get('application/edit/{id}',[WebHomeController::class,'edit'])->name('profile.edit');
+    Route::get('application/update/{id}',[WebHomeController::class,'update'])->name('application.update');
     Route::post('/applynowform/{loan_id}',[FrontendLoanController::class,'applyNowForm'])->name('user.applyform');
     Route::get('/add-to-wish-list/{loan_id}',[FrontendLoanController::class,'addWishList'])->name('add.to.wish.list');
     Route::get('/applynow/{loan_id}',[FrontendLoanController::class,'applyNow'])->name('user.applynow');
-
+    Route::get('/edit-profile',[FrontendLoanController::class,'editProfile'])->name('user.profile.edit');
+    Route::put('/update-profile/{id}',[FrontendLoanController::class,'updateProfile'])->name('user.profile.update');
 });
 
+
+  
 
 
 

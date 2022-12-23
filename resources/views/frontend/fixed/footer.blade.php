@@ -9,7 +9,8 @@
                          <div class="footer-tittle">
                              <h4>About Us</h4>
                              <div class="footer-pera">
-                                 <p>Heaven frucvitful doesn't cover lesser dvsays appear creeping seasons so behold.</p>
+                                 <p>Longbitz a software development company provides well equipped software development services to the customers. 
+                                    </p>
                             </div>
                          </div>
                      </div>
@@ -22,17 +23,17 @@
                             <h4>Contact Info</h4>
                             <ul>
                                 <li>
-                                <p>Address :Your address goes
-                                    here, your demo address.</p>
+                                <p>Address :Mirpur-1,Dhaka-1216,  
+                                    </p>
                                 </li>
                                 <li><a href="#">Phone : +8880 44338899</a></li>
-                                <li><a href="#">Email : info@colorlib.com</a></li>
+                                <li><a href="#">Email : support@longbitz.com</a></li>
                             </ul>
                         </div>
 
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                {{-- <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                     <div class="single-footer-caption mb-50">
                         <div class="footer-tittle">
                             <h4>Important Link</h4>
@@ -45,7 +46,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> --}}
                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                     <div class="single-footer-caption mb-50">
                         <div class="footer-tittle">
@@ -54,7 +55,7 @@
                              <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
                          </div>
                          <!-- Form -->
-                         <div class="footer-form" >
+                         {{-- <div class="footer-form" >
                              <div id="mc_embed_signup">
                                  <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                                  method="get" class="subscribe_form relative mail_part">
@@ -68,39 +69,13 @@
                                      <div class="mt-10 info"></div>
                                  </form>
                              </div>
-                         </div>
+                         </div> --}}
                         </div>
                     </div>
                 </div>
             </div>
            <!--  -->
-           <div class="row footer-wejed justify-content-between">
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                    <!-- logo -->
-                    <div class="footer-logo mb-20">
-                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                <div class="footer-tittle-bottom">
-                    <span>5000+</span>
-                    <p>Talented Hunter</p>
-                </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                    <div class="footer-tittle-bottom">
-                        <span>451</span>
-                        <p>Talented Hunter</p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
-                    <!-- Footer Bottom Tittle -->
-                    <div class="footer-tittle-bottom">
-                        <span>568</span>
-                        <p>Talented Hunter</p>
-                    </div>
-                </div>
-           </div>
+           
         </div>
     </div>
     <!-- footer-bottom area -->

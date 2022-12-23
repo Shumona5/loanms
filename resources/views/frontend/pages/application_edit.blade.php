@@ -3,15 +3,15 @@
 @section('Content')
 <div class="row">
     <div class="col-md-3"> </div>
-    <div class="col-md-6"> 
+    <div class="col-md-6">                                
 
         <h1> Loan Application Form </h1>  
-        <form action="{{route('profile.update',$profile->id)}}" method="POST">
+        <form action="{{route('application.update',$application->id)}}" method="POST">
             @csrf
           
           <div class="form-group">
                 <label for=""> Name: </label>
-                <input type="text" class="form-control" id=""  name="name"   placeholder="Enter name">
+                <input type="text" class="form-control" id=""  name="name"  value="{{$application->name}}" placeholder="Enter name">
             </div>
         
              <div class="form-group">
@@ -43,7 +43,7 @@
               <input type="text" class="form-control" id="" name="address" >
             </div>
       
-            <div class="form-group">
+            <div class="form-group">                      
             <p> How long have you lived in your given address? </p>
             <input type="radio" id="" value="0-1" name="living_duration" >
             <label for=""> 0-1 Year </label><br>

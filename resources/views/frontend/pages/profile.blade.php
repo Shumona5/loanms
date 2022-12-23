@@ -9,7 +9,7 @@
                     <div class="media align-items-end profile-head">
                         <div class="profile mr-3"><img
                                 src="{{url('/uploads/'.auth()->user()->image)}}"
-                                alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="#"
+                                alt="..." width="130" class="rounded mb-2 img-thumbnail"><a href="{{route('user.profile.edit')}}"
                                 class="btn btn-outline-dark btn-sm btn-block">Edit profile</a></div>
                         <div class="media-body mb-5 text-white">
                           <br>

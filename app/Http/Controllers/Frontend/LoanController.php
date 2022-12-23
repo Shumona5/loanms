@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Apply;
 use App\Models\criteria;
 use App\Models\Loan;
+use App\Models\User;
 use App\Models\WishList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -100,8 +101,29 @@ public function addWishList(int $loan_id)
 
        notify()->success('Loan Added to Your Wish List ');
         return redirect()->back();
-}         
+}    
 
 
+public function editProfile()
+{
+    return view('frontend.pages.edit_profile');          
+}
+
+
+public function updateProfile(Request $request, $id)
+{
+    // dd($request->all());
+    $user=User::find($id);
+
+   $user->update([
+    
+    'about'=>$request->about,
+    'contact'=>$request->contact
+   ]);
+    notify()->success('User profile Update Successfully');
+   return redirect()->route('user.profile');
+}
+
+         
 }
 

@@ -97,10 +97,10 @@ class WebHomeController extends Controller
     }
 
 
-    public function edit(int $profile_id)
+    public function edit(int $application_id)
     {
-        $profile=Apply::find($profile_id);
-        return view('frontend.pages.profile_edit');
+        $application=Apply::find($application_id);
+        return view('frontend.pages.application_edit',compact('application'));
     }
 
     public function update(Request $request ,int $profile_id)
