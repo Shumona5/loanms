@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('birth_date');
             $table->string('marital_status',15);
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('phone_number',20);
             $table->text('address');
             $table->text('relation_with_applicant')->nullable();

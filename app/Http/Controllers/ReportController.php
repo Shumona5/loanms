@@ -31,7 +31,7 @@ class ReportController extends Controller
      $from=$request->from_date;
      $to=$request->to_date;
 
-     $appliers=Apply::whereBetween('created_at',[$from,$to])->get();
+     $appliers=Apply::with('loanRelation')->whereBetween('created_at',[$from,$to])->get();
 
      return view('backend.pages.reports',compact('appliers'));
     }

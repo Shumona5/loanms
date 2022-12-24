@@ -41,8 +41,13 @@
             <div class="card bg-danger text-white mb-4">
                 <div class="card-body"> Total Bank {{$banks}} </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
-                    <a class="small text-white stretched-link" href="{{route ('bank')}}">View Details</a>
+                   
+                    @if (auth()->user()->role=='admin')
+                    <a class="small text-white stretched-link"  href="{{route ('bank')}}">View Details</a> 
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    @endif
+                    
+                   
                 </div>
             </div>
         </div>

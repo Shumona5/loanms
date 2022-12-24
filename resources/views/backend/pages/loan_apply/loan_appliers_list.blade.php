@@ -7,8 +7,8 @@
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Loan Id</th>
+        <th scope="col"> ID </th>
+        <th scope="col">Loan Title</th>
         <th scope="col">User Id </th>
         <th scope="col" >Name </th>
         <th scope="col" >Email </th>
@@ -20,7 +20,7 @@
         @foreach ($apply_list as $key=>$apply)
         <tr>
             <th scope="row"> {{$key+1}} </th>
-            <td>{{$apply->loan_id}}</td>
+            <td>{{$apply->loanRelation->title}}</td>
             <td>{{$apply->user_id}}</td>
             <td>{{$apply->name}}</td>
             <td>{{$apply->email}}</td>

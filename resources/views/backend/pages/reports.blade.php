@@ -29,8 +29,7 @@
     <thead>
       <tr>
         <th scope="col">ID </th>
-        <th scope="col">Loan Id</th>
-        <th scope="col">User Id </th>
+        <th scope="col">Loan Ttitle</th>
         <th scope="col" >Name </th>
         <th scope="col" >Email </th>
         <th scope="col" > Status </th>
@@ -46,8 +45,7 @@
       
         <tr>
             <th scope="row">{{$key+1}}</th>
-            <td>{{$data->loan_id}}</td>
-            <td>{{$data->user_id}}</td>
+            <td>{{$data->loanRelation->title}}</td>
             <td>{{$data->name}}</td>
             <td>{{$data->email}}</td>
             <td>{{$data->status}}</td>
