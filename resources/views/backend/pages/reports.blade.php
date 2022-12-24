@@ -6,17 +6,26 @@
 <br>
 <form action="{{route('report.generate')}}" method="GET">
 <div class="row">
-    <div class="col-md-4">
-       <label for=""> From Data </label>
-       <input type="date" class="form-control" name="from_date">
-    </div>
-    
-    <div class="col-md-4">
-        <label for=""> To Data </label>
-        <input type="date" class="form-control" name="to_date">
+    <div class="col-md-3">
+       <label for=""> From Date </label>
+       <input value="{{$from}}" type="date" class="form-control" name="from_date">
     </div>
 
-    <div class="col-md-4"> 
+    <div class="col-md-3">
+        <label for=""> To Date </label>
+        <input value="{{$to}}" type="date" class="form-control" name="to_date">
+    </div>
+    <div class="col-md-3">
+        <br>
+        <select name="type" id="" class="form-control form-select">
+            <option value="">-- Select Option --</option>
+            @foreach($types as $type)
+            <option value="{{$type->id}}">{{$type->name}}</option>
+            @endforeach
+        </select>
+    </div>
+
+    <div class="col-md-3">
         <br>
         <button type="submit" class="btn btn-primary"> Report Generate </button>
     </div>
@@ -24,12 +33,13 @@
 </form>
 <br>
 
-<div id="applicationReport"> 
+<div id="applicationReport">
 <table class="table">
     <thead>
       <tr>
         <th scope="col">ID </th>
-        <th scope="col">Loan Ttitle</th>
+        <th scope="col">Loan Title</th>
+        <th scope="col">Loan Type</th>
         <th scope="col" >Name </th>
         <th scope="col" >Email </th>
         <th scope="col" > Status </th>
@@ -38,14 +48,15 @@
     <tbody>
 
         @if (isset($appliers))
-            
-        
+
+
        @foreach ( $appliers as $key=> $data)
-           
-      
+
+
         <tr>
             <th scope="row">{{$key+1}}</th>
             <td>{{$data->loanRelation->title}}</td>
+            <td>{{$data->loanRelation->loantype->name}}</td>
             <td>{{$data->name}}</td>
             <td>{{$data->email}}</td>
             <td>{{$data->status}}</td>
@@ -56,7 +67,7 @@
  </table>
 </div>
 <br>
-<button onclick="printDiv('applicationReport')"  class="btn btn-success">  Print </button>   
+<button onclick="printDiv('applicationReport')"  class="btn btn-success">  Print </button>
 
 
 <script>
