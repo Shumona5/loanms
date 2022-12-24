@@ -12,8 +12,10 @@
                       {{$loan}} 
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
+                     @if (auth()->user()->role=='admin')
                     <a class="small text-white stretched-link" href="{{route('loan')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                     @endif
                 </div>
             </div>
         </div>
@@ -23,8 +25,10 @@
                           {{$loanTypes}}
                 </div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
+                      @if (auth()->user()->role=='admin')
                     <a class="small text-white stretched-link" href="{{route('loantype')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                @endif
                 </div>
             </div>
         </div>
@@ -32,8 +36,10 @@
             <div class="card bg-success text-white mb-4">
                 <div class="card-body"> Total Loan Seekers  {{$loanSeekers}}</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
+                    @if (auth()->user()->role=='admin')
                     <a class="small text-white stretched-link" href="{{route('user')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                      @endif
                 </div>
             </div>
         </div>
