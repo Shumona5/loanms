@@ -14,7 +14,7 @@ class BankController extends Controller
 
      // variable=Model name::all-method(); ....formula....
    //  $bank_list=Bank::all();
-    $bank_list=User::where('role','bank')->paginate(5);
+    $bank_list=User::where('role','bank')->orderBy('id','DESC')->paginate(5);
       // dd($bank_list);
 
 

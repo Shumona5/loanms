@@ -18,7 +18,7 @@
                                     <ul id="navigation">
                                         <li><a href="{{route('user.home')}}">Home</a></li>
                                         <li><a href="{{route('user.findloan')}}"> All Loans </a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="{{route('web.about')}}">About</a></li>
                                         
                                         
                                     </ul>
