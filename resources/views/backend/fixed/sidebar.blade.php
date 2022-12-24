@@ -8,9 +8,9 @@
                     Dashboard
                 </a>
 
-                  @if (auth()->user()->role=='admin')      
-                      
-                
+                  @if (auth()->user()->role=='admin')
+
+
 
                 <a class="nav-link" href="{{route('admin')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-circle"></i></div>
@@ -54,19 +54,20 @@
 {{--                </a>--}}
 
                       @if (auth()->user()->role=='admin')
-                          
+
                      <a class="nav-link" href="{{route('loantype')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-list-ul"></i></div>
                     Loan Type
                    </a>
-                    @endif
- 
+                    <a class="nav-link" href="{{route('report')}}">
+                        <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
+                        Report
+                    </a>
+
+                @endif
 
 
-                <a class="nav-link" href="{{route('report')}}">
-                    <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
-                    Report
-                </a>
+
 
                 <a class="nav-link" href="{{route('fav')}}">
                     <div class="sb-nav-link-icon"><i class="fas fa-heart"></i></div>

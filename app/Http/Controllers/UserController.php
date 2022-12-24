@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Unique;
 
 class UserController extends Controller
@@ -13,11 +15,46 @@ class UserController extends Controller
    {
        return view('backend.pages.login');
    }
-   
+
+    public function updatePassword()
+    {
+        return view('backend.pages.users.update-password');
+   }
+
+    public function updatePasswordSubmit(Request $request)
+    {
+       //validation
+            $validate=Validator::make($request->all(),[
+                'old_password'=>'required',
+                'new_password'=>'required',
+                'retype_password' => 'required|same:new_password',
+            ]);
+            if($validate->fails())
+            {
+                notify()->error($validate->getMessageBag());
+                return redirect()->back();
+            }
+
+        //check old password matches
+        if(Hash::check($request->old_password,auth()->user()->password)){
+            //update new password
+            $user=User::find(auth()->user()->id);
+            $user->udpate([
+               'password'=>bcrypt($request->new_password)
+            ]);
+            notify()->success('Password updated.');
+        }else
+        {
+            notify()->error('Old Password not match.');
+        }
+        return redirect()->back();
+
+    }
+
 public function store(Request $request)
 {
         //  dd($request-> all());
-      
+
      $loginInfo=$request->except('_token');
      if(Auth::attempt($loginInfo))
      {
@@ -32,13 +69,13 @@ public function store(Request $request)
 
 public function user()
     {
-        
+
         // $user_list=User::all();
             $user_list=User::where('role','user')-> paginate(5);
         return view('backend.pages.users.loan_seeker',compact('user_list'));
-    }                
+    }
 
-    public function logout()         
+    public function logout()
     {
         Auth::logout();
         return redirect()->back()->with('message','logout Successful');
@@ -68,7 +105,7 @@ public function user()
      public function editUser(int $user_id)
      {
         $user=User::find($user_id);
-        return view ('backend.pages.users.edit_user',compact('user'));  
+        return view ('backend.pages.users.edit_user',compact('user'));
      }
 
 
@@ -87,7 +124,7 @@ public function user()
         'image' =>$fileName,
         'contact'=>$request->contact,
         'address'=>$request->address,
-        'status'=>$request->status 
+        'status'=>$request->status
       ]);
     notify()->success('User Update Successfully');
       return redirect()->route('user');

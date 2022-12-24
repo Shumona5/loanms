@@ -37,9 +37,9 @@ Route::get('/searchloan',[FrontendLoanController::class,'list'])->name('user.sea
 Route::get('/viewnow/{loan_id}',[FrontendLoanController::class,'view'])->name('user.viewnow');
 Route::get('/findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
 
-     
+
 Route::group(["middleware"=>'auth'],function(){
-   
+
     Route::get('/logout',[WebHomeController::class,'logout'])->name('user.logout');
     Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
     Route::get('application/cancel/{id}',[WebHomeController::class,'cancel'])->name('user.cancel');
@@ -53,7 +53,7 @@ Route::group(["middleware"=>'auth'],function(){
 });
 
 
-  
+
 
 
 
@@ -76,6 +76,10 @@ Route::get('/user/delete/{user_id}',[UserController::class,'deleteUser'])->name(
 Route::get('/user/edit/{user_id}',[UserController::class,'editUser'])->name('user.edit');
 Route::put('/user/update/{user_id}',[UserController::class,'updateUser'])->name('user.update');
 
+Route::get('/update-password-form',[UserController::class,'updatePassword'])->name('password.update');
+Route::post('/update-password',[UserController::class,'updatePasswordSubmit'])->name('password.update.submit');
+
+
 Route::get('/bank',[BankController::class,'bank'])->name('bank');
 Route::get('/bank/create',[BankController::class,'createform'])->name('bank.create');
 Route::post('/bank/store',[BankController::class,'bankstore'])->name('bank.store');
@@ -85,7 +89,7 @@ Route::get('/bank/edit/{bank_id}',[BankController::class,'editBank'])->name('adm
 Route::put('/bank/update/{bank_id}',[BankController::class,'update'])->name('admin.bank.update');
 
 Route::get('/admin-users',[AdminController::class,'admin'])->name('admin');
-                                                                        
+
 Route::get('/loans',[LoanController::class,'loan'])->name('loan');
 Route::get('/loan/create',[LoanController::class,'createform'])->name('loan.create');
 Route::post('/loan/store',[LoanController::class,'loanStore'])->name('loan.store');
