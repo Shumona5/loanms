@@ -10,19 +10,18 @@ class CriteriaController extends Controller
 {
     public function list()
     {
-       
-        $criterialist=Criteria::with('loan_type_relation')-> paginate(5);
+
+        $criterialist=Criteria::with('loan_type_relation')->where('bank_id',auth()->user()->id)->paginate(5);
     //    dd($criterialist);
         return view('backend.pages.criterias.criteria',compact('criterialist'));
     }
 
     public function criteriaList()
     {
-        
         $loantype=LoanType::all();
 
         // dd($loantype);
-        
+
         return view('backend.pages.criterias.criteria_create',compact('loantype'));
     }
 
@@ -33,7 +32,8 @@ class CriteriaController extends Controller
             'title'=>$request->criteria_name,
             'description'=>$request->description,
             'type_id'=>$request->loan_type_id,
-            'status'=>$request->status
+            'status'=>$request->status,
+            'bank_id'=>auth()->user()->id
         ]);
          notify()->success('Criteria Created successfully');
         return redirect()->back();
@@ -53,12 +53,12 @@ class CriteriaController extends Controller
             notify()->error('Criteria not Found');
             return redirect()->back();
         }
-        
+
     }
 
     public function view(int $criteria_id)
     {
-         $criteria=Criteria::find($criteria_id); 
+         $criteria=Criteria::find($criteria_id);
         return view('backend.pages.criterias.view_criteria',compact('criteria'));
     }
 
@@ -76,13 +76,12 @@ class CriteriaController extends Controller
           $criterias=Criteria::find($criteria_id);
 
           $criterias->update([
-
             'title'=>$request->criteria_name,
             'description'=>$request->description,
             'type_id'=>$request->loan_type_id,
             'status'=>$request->status
           ]);
-        
+
           notify()->success('Criteria Updated Successfully');
           return redirect()->back();
     }

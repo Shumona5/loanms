@@ -48,7 +48,7 @@ class UserController extends Controller
             notify()->error('Old Password not match.');
         }
         return redirect()->back();
-
+      
     }
 
 public function store(Request $request)
