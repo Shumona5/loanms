@@ -12,12 +12,12 @@
               
               <div class="form-group">
                     <label for=""> Name: </label>
-                    <input type="text" class="form-control" id=""  name="name" value="{{auth()->user()->name}}"  placeholder="Enter name">
+                    <input required type="text" class="form-control" id=""  name="name" value="{{auth()->user()->name}}"  placeholder="Enter name">
                 </div>
             
                  <div class="form-group">
                     <label for=""> Date Of Birth : </label>
-                    <input type="date" class="form-control" id="" name="birth_date"  placeholder="Enter name">
+                    <input required type="date" class="form-control" id="" name="birth_date"  placeholder="Enter name">
                 </div>
 
                 <div class="form-group">
@@ -31,17 +31,17 @@
             
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{auth()->user()->email}}" placeholder="Enter email">
+                  <input required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{auth()->user()->email}}" placeholder="Enter email">
                 </div>      
                 
                 <div class="form-group">
                   <label for=""> Phone Number </label>
-                  <input type="number" class="form-control" id="" name="phone_number" value="{{auth()->user()->contact}}">
+                  <input required type="number" class="form-control" id="" name="phone_number" value="{{auth()->user()->contact}}">
                 </div>
 
                 <div class="form-group">
                   <label for=""> Address: </label>
-                  <input type="text" class="form-control" id="" name="address" value="{{auth()->user()->address}}">
+                  <input required type="text" class="form-control" id="" name="address" value="{{auth()->user()->address}}">
                 </div>
 
                 <div class="form-group">
@@ -64,17 +64,17 @@
 
               <div class="form-group">
                 <label for=""> Company Name: </label>
-                <input type="text" class="form-control" id="" name="company">
+                <input required type="text" class="form-control" id="" name="company">
               </div>
 
              <div class="form-group">
               <label for=""> Designation </label>
-              <input type="text" class="form-control" id="" name="designation">
+              <input required type="text" class="form-control" id="" name="designation">
              </div>
 
                <div class="form-group">
                    <p> Years of experience* </p>
-                    <input type="radio" id="" value="0-1" name="experience" >
+                    <input  type="radio" id="" value="0-1" name="experience" >
                     <label for=""> 0-1 Year </label><br>
                     <input type="radio" id="" value="1-2"  name="experience">
                     <label for=""> 1-2 Years </label><br>  
@@ -86,7 +86,7 @@
 
             <div class="form-group">
               <label for=""> Gross monthly income </label>
-              <input type="number" class="form-control" id=""  name="monthly_income">
+              <input required type="number" class="form-control" id=""  name="monthly_income">
              </div>
  
              <div class="form-group">

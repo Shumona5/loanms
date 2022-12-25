@@ -38,9 +38,9 @@ class LoanController extends Controller
         //    dd($loan);
         // $loan=Loan::with(['loantype','loantype.criteriaRel'])->find($loan_id);
         $loan=Loan::with('loantype')->find($loan_id);
-
+        // dd($loan);
         $criterias=criteria::where('type_id',$loan->type_id)->where('bank_id',$loan->bank_id)->get();
-
+        // dd($criterias);
         return view('frontend.pages.viewNow',compact('loan','criterias'));
     }
 
@@ -59,7 +59,9 @@ class LoanController extends Controller
        $validation=Validator::make($request->all(),[
         'birth_date'=>'required|before:-20 years',
         'phone_number'=>'required|digits:11',
-        'experience'=>'required'
+        'experience'=>'required',
+        'marital_status'=>'required',
+        'address'=>'required'
        ]);
 
 

@@ -147,17 +147,16 @@
                 src="{{url('/uploads/'.$loan->image)}}" alt="" class="avatar">
                 <div class="user-info">
                     <h3> Loan Title: {{$loan->title}} </h3> <span class="text-muted">
-                        Loan Details: {{$loan->details}}
-                        <Br>
-                        Loan Amounts: {{$loan->loan_amount}}
-                        <br>
-                        Number Of Months : {{$loan->number_of_months}}
-                        <br>
-                        Bank ID : {{$loan->bank_id}}
-                        <br>
-                        Type ID : {{$loan->type_id}}
-                        <br>
-                        Status : {{$loan->status}}
+                      <p  style="color: black"> Loan Details: {{$loan->details}} </p>
+                      <p> Loan Amounts: {{$loan->loan_amount}} BDT </p>
+                        
+                      <p> Number Of Months : {{$loan->number_of_months}} months </p>
+                        
+                       <p> Bank Name : {{$loan->bank->name}} </p>
+                       
+                       <p> Loan Type : {{$loan->loantype->name}} </p>
+                       
+                       <p> Status : {{$loan->status}} </p>
                         
                     </span>
                 </div>
@@ -173,9 +172,9 @@
                             class="btn btn-primary btn-sm" rel="publisher" href="#"> <i class="fa fa-facebook"></i>
                         </a></div>
                 </div> --}}
-                <div class="input-group mb-3 w-75 mx-auto">
+                {{-- <div class="input-group mb-3 w-75 mx-auto">
                     <button class="btn addBtn form-control" aria-describedby="myBtn">Back</button>
-                </div>
+                </div> --}}
                 <div class="bg-b"></div>
             </div>
             <div class="bottom-design"></div>

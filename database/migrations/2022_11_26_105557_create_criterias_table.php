@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('criterias', function (Blueprint $table) {
             $table->id();
-            $table->string('title',50);
-            $table->text('description',100);
+            $table->string('criteria_title',100);
+            $table->text('description',150);
             $table->integer('type_id');
             $table->string('status',50)->default('active');
             $table->timestamps();

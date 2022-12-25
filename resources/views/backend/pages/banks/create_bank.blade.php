@@ -37,7 +37,7 @@
      
     <div>
         <label for="text"> Contact:  </label>
-        <input type="text" class="form-control" id="text"  name="contact" placeholder="Enter Phone Number"> 
+        <input type="number" class="form-control" id="text"  name="contact" placeholder="Enter Phone Number"> 
     </div>
     
     

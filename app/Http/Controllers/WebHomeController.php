@@ -107,7 +107,7 @@ class WebHomeController extends Controller
     {
         $profile=Apply::find($profile_id);
         $profile->update([
-            
+            // ..................................
         ]);
 
     }

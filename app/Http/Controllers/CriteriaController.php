@@ -29,7 +29,7 @@ class CriteriaController extends Controller
     {
             //  dd($request->all());
             Criteria::create([
-            'title'=>$request->criteria_name,
+            'criteria_title'=>$request->criteria_name,
             'description'=>$request->description,
             'type_id'=>$request->loan_type_id,
             'status'=>$request->status,

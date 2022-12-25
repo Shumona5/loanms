@@ -33,7 +33,7 @@
 
                         <h2 class="lead"> Loan Criterias: </h2>
                         @foreach ($criterias as $key=>$data)
-                        <p>{{$key+1}}. {{$data->title}}</p>
+                        <p>{{$key+1}}. {{$data->criteria_title}}</p>
                         @endforeach
                       
                        

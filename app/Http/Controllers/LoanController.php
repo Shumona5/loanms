@@ -57,7 +57,7 @@ class LoanController extends Controller
     public function viewloan(int $loan_id)
     {
       // dd($loan_id);
-      $loan=loan::find($loan_id);
+      $loan=loan::with(['loantype','bank'])->find($loan_id);
       return view('backend.pages.loans.view_loan',compact('loan'));
     }
     
