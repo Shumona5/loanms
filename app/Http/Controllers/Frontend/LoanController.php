@@ -124,6 +124,10 @@ public function updateProfile(Request $request, $id)
    return redirect()->route('user.profile');
 }
 
+public function about()
+{
+    return view('frontend.pages.about');
+}
 
 }
 

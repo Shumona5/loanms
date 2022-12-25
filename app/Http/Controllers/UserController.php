@@ -39,7 +39,7 @@ class UserController extends Controller
         if(Hash::check($request->old_password,auth()->user()->password)){
             //update new password
             $user=User::find(auth()->user()->id);
-            $user->udpate([
+            $user->update([
                'password'=>bcrypt($request->new_password)
             ]);
             notify()->success('Password updated.');
