@@ -13,22 +13,22 @@ use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Stmt\Return_;
 
 class LoanController extends Controller
-{                                                        
-    public function list(Request $request)                    
-    {                                                           
-        //  dd($request->all());                                         
+{
+    public function list(Request $request)
+    {
+        //  dd($request->all());
         //  if($request->amount )
 
-     $loans=Loan::with(['loantype','bank'])->where('type_id',$request->type_id)->get();   
-      
-        return view('frontend.pages.featured_loan',compact('loans'));         
+     $loans=Loan::with(['loantype','bank'])->where('type_id',$request->type_id)->get();
+
+        return view('frontend.pages.featured_loan',compact('loans'));
     }
-                    
+
 
     public function findloan()
     {
-        $loans=Loan::all() ; 
-        // dd($loans);          
+        $loans=Loan::all() ;
+        // dd($loans);
         return view('frontend.pages.findloan',compact('loans'));
     }
 
@@ -36,11 +36,11 @@ class LoanController extends Controller
     {
         // dd($loan_id);
         //    dd($loan);
-        // $loan=Loan::with(['loantype','loantype.criteriaRel'])->find($loan_id); 
-        $loan=Loan::with('loantype')->find($loan_id); 
+        // $loan=Loan::with(['loantype','loantype.criteriaRel'])->find($loan_id);
+        $loan=Loan::with('loantype')->find($loan_id);
 
-        $criterias=criteria::where('type_id',$loan->type_id)->get();
-        
+        $criterias=criteria::where('type_id',$loan->type_id)->where('bank_id',$loan->bank_id)->get();
+
         return view('frontend.pages.viewNow',compact('loan','criterias'));
     }
 
@@ -53,30 +53,30 @@ class LoanController extends Controller
         return view('frontend.pages.applynow',compact('loan_id'));
     }
 
-     
+
     public function applyNowForm(Request $request, $loan_id)
     {
        $validation=Validator::make($request->all(),[
         'birth_date'=>'required|before:-20 years',
         'phone_number'=>'required|digits:11',
         'experience'=>'required'
-       ]);                           
-                                    
-                                                     
+       ]);
+
+
        if($validation->fails())
        {
         notify()->error($validation->getMessageBag());
         return redirect()->back();
        }
-        
+
         Apply::create([
             'loan_id'=>$loan_id,
             'user_id'=>auth()->user()->id,
-            'name'=>$request->name,                                      
+            'name'=>$request->name,
             'birth_date'=>$request->birth_date,
-            'marital_status'=>$request->marital_status,           
+            'marital_status'=>$request->marital_status,
             'email'=>$request->email,
-            'phone_number'=>$request->phone_number,                                                 
+            'phone_number'=>$request->phone_number,
             'address'=>$request->address,
             'relation_with_applicant'=>$request->relation_with_applicant,
             'living_duration'=>$request->living_duration,
@@ -89,7 +89,7 @@ class LoanController extends Controller
            notify()->success('Loan Applied Successfully');
          return redirect()->route('user.profile');
     }
-   
+
 public function addWishList(int $loan_id)
 {
         //    dd($loan_id);
@@ -97,16 +97,16 @@ public function addWishList(int $loan_id)
 
          'loan_seekers_id'=>auth()->user()->id,
          'loan_id'=>$loan_id
-        ]); 
+        ]);
 
        notify()->success('Loan Added to Your Wish List ');
         return redirect()->back();
-}    
+}
 
 
 public function editProfile()
 {
-    return view('frontend.pages.edit_profile');          
+    return view('frontend.pages.edit_profile');
 }
 
 
@@ -116,7 +116,7 @@ public function updateProfile(Request $request, $id)
     $user=User::find($id);
 
    $user->update([
-    
+
     'about'=>$request->about,
     'contact'=>$request->contact
    ]);
@@ -124,6 +124,6 @@ public function updateProfile(Request $request, $id)
    return redirect()->route('user.profile');
 }
 
-         
+
 }
 

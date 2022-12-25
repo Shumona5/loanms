@@ -9,7 +9,6 @@
       <tr>
         <th scope="col"> ID </th>
         <th scope="col">Loan Title</th>
-        <th scope="col">User Id </th>
         <th scope="col" >Name </th>
         <th scope="col" >Email </th>
         <th scope="col" > Status </th>
@@ -21,14 +20,13 @@
         <tr>
             <th scope="row"> {{$key+1}} </th>
             <td>{{$apply->loanRelation->title}}</td>
-            <td>{{$apply->user_id}}</td>
             <td>{{$apply->name}}</td>
             <td>{{$apply->email}}</td>
             <td>{{$apply->status}}</td>
             <td>
                 <a href="{{route('loanappliers.view',$apply->id)}}" class="btn btn-success"> View </a>
-                <a href="{{route('loanappliers.edit',$apply->id)}}" class="btn btn-primary"> Edit </a>
-                <a href="{{route('loanappliers.delete',$apply->id)}}" class="btn btn-danger"> Delete </a>
+{{--                <a href="{{route('loanappliers.edit',$apply->id)}}" class="btn btn-primary"> Edit </a>--}}
+{{--                <a href="{{route('loanappliers.delete',$apply->id)}}" class="btn btn-danger"> Delete </a>--}}
             </td>
           </tr>
         @endforeach
