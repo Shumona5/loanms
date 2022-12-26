@@ -17,13 +17,13 @@
      
     <div>
         <label for="loan_amount"> Loan Amount:  </label>
-        <input required type="number" class="form-control" id="loan_amount"  name="loan_amount" > 
+        <input required type="number" min="50000"  class="form-control" id="loan_amount"  name="loan_amount" > 
     </div>
     
     
     <div>
         <label for="num_of_months"> Number Of month(s): </label>
-        <input required  type="number" class="form-control" id="num_of_months"  name="number_of_months" > 
+        <input required  type="number"  class="form-control" id="num_of_months"  name="number_of_months" > 
     </div>
 
     <div>
