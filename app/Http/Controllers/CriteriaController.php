@@ -76,7 +76,7 @@ class CriteriaController extends Controller
           $criterias=Criteria::find($criteria_id);
 
           $criterias->update([
-            'title'=>$request->criteria_name,
+            'criteria_title'=>$request->criteria_name,
             'description'=>$request->description,
             'type_id'=>$request->loan_type_id,
             'status'=>$request->status

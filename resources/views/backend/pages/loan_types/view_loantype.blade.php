@@ -11,7 +11,7 @@
 </p>
 
 <p>
-    <label for="image"> Image: {{$loantypes->imane}}</label>
+    <label for="image"> Image: {{$loantypes->image}}</label>
 </p>
 
 <p>

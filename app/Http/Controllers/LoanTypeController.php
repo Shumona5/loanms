@@ -13,7 +13,7 @@ class LoanTypeController extends Controller
     {
         
         // $loantypes_list=LoanType::all();
-        $loantypes_list=LoanType::paginate(5);
+        $loantypes_list=LoanType::orderBy('id','DESC')->paginate(5);
         // dd($loantypes_list);
     
         return view('backend.pages.loan_types.loan_type',compact('loantypes_list'));

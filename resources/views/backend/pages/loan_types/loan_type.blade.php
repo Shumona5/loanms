@@ -29,7 +29,7 @@
             <td>
               <a href="{{route('loantype.view',$data->id)}}"class="btn btn-success"> View </a>
               <a href="{{route('loantype.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
-              <a href="" class="btn btn-primary"> Edit </a>
+              {{-- <a href="" class="btn btn-primary"> Edit </a> --}}
             </td>
           </tr>
           @endforeach

@@ -14,7 +14,7 @@ class WebHomeController extends Controller
     public function home()
     {
 
-        $data=LoanType::all();
+        $data=LoanType::where('status','active')->get();
         $loans=Loan::all(); 
         
         // dd($loans);
@@ -105,10 +105,16 @@ class WebHomeController extends Controller
 
     public function update(Request $request ,int $profile_id)
     {
+        // dd($request->all());
         $profile=Apply::find($profile_id);
         $profile->update([
-            // ..................................
+            
+        'name'=>$request->name,
+        'years_of_experience'=>$request->experience
+        
         ]);
+        notify()->success('Application Updated Successfully');
+        return redirect()->back();
 
     }
   }                 

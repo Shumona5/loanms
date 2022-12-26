@@ -29,7 +29,7 @@
         <td> <img width="100px" src="{{url('/uploads/'.$data->image)}}" alt="image"></td>
         <td>{{$data->status}} </td>
         <td>
-          <a href="{{route('user.view',$data->id)}}"class="btn btn-success"> View </a>
+          {{-- <a href="{{route('user.view',$data->id)}}"class="btn btn-success"> View </a> --}}
           <a href="{{route('user.delete',$data->id)}}" class="btn btn-danger"> Delete </a>
           <a href="{{route('user.edit',$data->id)}}" class="btn btn-primary"> Edit </a>
         </td>

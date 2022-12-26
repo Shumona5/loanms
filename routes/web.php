@@ -37,14 +37,16 @@ Route::get('/searchloan',[FrontendLoanController::class,'list'])->name('user.sea
 Route::get('/viewnow/{loan_id}',[FrontendLoanController::class,'view'])->name('user.viewnow');
 Route::get('/findloan',[FrontendLoanController::class,'findloan'])->name('user.findloan');
 
+Route::get('/type-wise-loan/{id}',[FrontendLoanController::class,'loanUnderType'])->name('user.type.wise.loan');
+
 
 Route::group(["middleware"=>'auth'],function(){
 
     Route::get('/logout',[WebHomeController::class,'logout'])->name('user.logout');
     Route::get('/profile',[WebHomeController::class,'profile'])->name('user.profile');
     Route::get('application/cancel/{id}',[WebHomeController::class,'cancel'])->name('user.cancel');
-    Route::get('application/edit/{id}',[WebHomeController::class,'edit'])->name('profile.edit');
-    Route::put('application/update/{id}',[WebHomeController::class,'update'])->name('application.update');
+    Route::get('/application/edit/{id}',[WebHomeController::class,'edit'])->name('profile.edit');
+    Route::put('/application/update/{id}',[WebHomeController::class,'update'])->name('application.update');
     Route::post('/applynowform/{loan_id}',[FrontendLoanController::class,'applyNowForm'])->name('user.applyform');
     Route::get('/add-to-wish-list/{loan_id}',[FrontendLoanController::class,'addWishList'])->name('add.to.wish.list');
     Route::get('/applynow/{loan_id}',[FrontendLoanController::class,'applyNow'])->name('user.applynow');

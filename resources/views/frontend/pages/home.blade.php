@@ -1,5 +1,11 @@
 @extends('frontend.master')
 @section('Content')
+
+<style type="text/css">
+.slick-list{
+    overflow: visible !important;
+}
+</style>
 <!-- slider Area Start-->
 <div class="slider-area ">
     <!-- Mobile Menu -->
@@ -23,7 +29,7 @@
                             </div>              
                             <div class="select-form">
                                 <div class="select-itms">
-                                    <select name="type_id" id="select1">
+                                    <select name="type_id" id="">
                                         @foreach ($data as $type )
                                         <option value="{{$type->id}}"> {{$type->name}}</option> 
                                         @endforeach
@@ -59,14 +65,14 @@
         <div class="row d-flex justify-contnet-center">
             @foreach ($data as $type )
 
-            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-                <div class="single-services text-center mb-30">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6" >
+                <div class="single-services text-center mb-30" style="border: 1px solid #fb246a">
                     <div class="services-ion">
                         <span class="flaticon-tour"></span>
                     </div>
                     <div class="services-cap">
                        
-                       <h5><a href="job_listing.html"> {{$type->name}}</a></h5>
+                       <h5><a href="{{route('user.type.wise.loan',$type->id)}}"> {{$type->name}}</a></h5>
                       
                         
                     </div>
@@ -77,13 +83,13 @@
         </div>
         <!-- More Btn -->
         <!-- Section Button -->
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-12">
                 <div class="browse-btn2 text-center mt-50">
                     <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- Our Services End -->

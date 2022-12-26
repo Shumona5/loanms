@@ -32,6 +32,14 @@ class LoanController extends Controller
         return view('frontend.pages.findloan',compact('loans'));
     }
 
+
+    public function loanUnderType($typeId)
+    {
+        $loans=Loan::where('type_id',$typeId)->get();
+        // dd($loans);
+        return view('frontend.pages.type-wise-loan',compact('loans'));
+    }
+
     public function view($loan_id)
     {
         // dd($loan_id);
