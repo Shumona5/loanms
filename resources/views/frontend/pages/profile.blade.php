@@ -2,7 +2,7 @@
 
 @section('Content')
     <div class="row py-5 px-4">
-        <div class="col-md-5 mx-auto">
+        <div class="col-md-8 mx-auto">
             <!-- Profile widget -->
             <div class="bg-white shadow rounded overflow-hidden">
                 <div class="px-4 pt-0 pb-4 cover">
@@ -72,7 +72,7 @@
                           <td>
                             {{-- cancel button show only for pending application  --}}
                         @if($application->status == 'Pending')
-                          <a href="{{route('user.cancel',$application->id)}}"class="btn btn-primary"> Cancel </a>
+                          <a  href="{{route('user.cancel',$application->id)}}"class="btn btn-primary"> Cancel </a>
                         @endif
                           <a href="{{route('profile.edit',$application->id)}}"class="btn btn-success"> Edit </a>
                           </td>
@@ -102,8 +102,8 @@
                             <td>{{$data->seekerRelation->name}}</td>
                             <td>{{$data->loanRelation->title}}</td>
                             <td>
-                              <a href="" class="btn btn-danger">Delete</a>
-                              <a href="{{route('user.applynow',$data->loan_id)}}" class="btn btn-danger"> Apply Now </a>
+                              <a style="background:red" href="{{route('wishlist.delete',$data->id)}}" class="btn btn-danger">Delete</a>
+                              <a style="background:green" href="{{route('user.applynow',$data->loan_id)}}" class="btn btn-danger"> Apply Now </a>
                             </td>
                 
                     </tr>

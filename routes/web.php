@@ -53,6 +53,7 @@ Route::group(["middleware"=>'auth'],function(){
     Route::get('/edit-profile',[FrontendLoanController::class,'editProfile'])->name('user.profile.edit');
     Route::put('/update-profile/{id}',[FrontendLoanController::class,'updateProfile'])->name('user.profile.update');
    
+    Route::get('/delete-wish/{id}',[FrontendLoanController::class,'deleteWishList'])->name('wishlist.delete');
 });
 
 

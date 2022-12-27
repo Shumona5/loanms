@@ -25,6 +25,14 @@ class LoanController extends Controller
     }
 
 
+    public function deleteWishList($id)
+    {
+        WishList::find($id)->delete();
+
+    notify()->success('Delete from wishlist');
+    return redirect()->back();
+    }
+
     public function findloan()
     {
         $loans=Loan::all() ;
